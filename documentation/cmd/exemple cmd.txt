@@ -1,0 +1,79 @@
+echo off
+echo --------------------------------------------------------------------------------------
+echo Procedure d'installation de la nouvelle version du Framework Bytel.
+echo --------------------------------------------------------------------------------------
+echo Controles a effectuer avant de commencer :
+echo   - Le msi d'installation de l'ancienne version doit se trouver dans le repertoire F:\INSTALL.
+echo   - Le nom de l'ancien msi doit etre 'old_BytelBaseFrameworkInstaller.msi'.
+echo   - Le msi d'installation de la nouvelle version doit se trouver dans le repertoire F:\INSTALL.
+echo   - Le nom du nouveau msi doit etre 'BytelBaseFrameworkInstaller.msi'.
+echo   - Fermer VisualStudio avant de continuer
+
+set oldVers=4.0.8.0
+set newVers=4.0.8.0
+set installDir=F:\INSTALL
+set versionsDir=F:\INSTALL\archives
+set msiFileName=BytelBaseFrameworkInstaller.msi
+set fwDir1=F:\ECO\BTNetFramework
+set fwDir2=F:\ECO\BTNetFramework.Design
+set fwDir3=F:\ECO\BTNetFrameworkCore
+set fwDir4=F:\ECO\BTNetLibrary
+set fwDir5=F:\ECO\BTNetLibrary.Design
+set fwDir6=F:\ECO\BTNetLibraryCore
+set date=%date:~6,4%%date:~3,2%%date:~0,2%_%time:~0,2%%time:~3,2%%time:~6,2%
+
+echo Continuer ?
+pause
+
+
+echo --------------------------------------------------------------------------------------
+echo 1. Desinstallation GAC windows de l'ancienne version...
+F:
+cd "F:\ECO\GAC\BTNetFramework\%oldVers%"
+call UnInstall.cmd
+echo ... terminee.
+
+
+echo --------------------------------------------------------------------------------------
+echo 2. Desinstallation de la precedente version du framework...
+msiexec /x "%installDir%\old_%msiFileName%" /quiet
+echo ... terminee.
+
+
+echo --------------------------------------------------------------------------------------
+echo 3. Suppression des anciens repertoires d'installation...
+rmdir /S /Q "%fwDir1%\%oldVers%"
+rmdir /S /Q "%fwDir2%\%oldVers%"
+rmdir /S /Q "%fwDir3%\%oldVers%"
+rmdir /S /Q "%fwDir4%\%oldVers%"
+rmdir /S /Q "%fwDir5%\%oldVers%"
+rmdir /S /Q "%fwDir6%\%oldVers%"
+echo ... terminee.
+
+
+echo --------------------------------------------------------------------------------------
+echo 4. Installation de la nouvelle version du framework...
+msiexec /i "%installDir%\%msiFileName%" /quiet
+echo ... terminee.
+
+
+echo --------------------------------------------------------------------------------------
+echo 5. Installation GAC windows de la nouvelle version...
+F:
+cd "F:\ECO\GAC\BTNetFramework\%newVers%"
+call Install.cmd
+echo ... terminee.
+
+
+echo --------------------------------------------------------------------------------------
+echo 6. Archivage du fichier et preparation de la prochaine mise a jour
+F:
+move "%installDir%\old_%msiFileName%" "%versionsDir%\%date%_%msiFileName%"
+move "%installDir%\%msiFileName%" "%installDir%\old_%msiFileName%"
+echo ... terminee.
+
+
+echo --------------------------------------------------------------------------------------
+echo Mise a jour du framework terminee
+
+pause

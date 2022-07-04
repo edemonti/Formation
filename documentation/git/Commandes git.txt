@@ -1,0 +1,18 @@
+https://git-scm.com/book/fr/v2/D%C3%A9marrage-rapide-Param%C3%A9trage-%C3%A0-la-premi%C3%A8re-utilisation-de-Git
+
+
+Après avoir installé Git :
+$ git config --global user.name "Emmanuel de MONTI"
+$ git config --global user.email edemonti@hotmail.fr
+$ git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+
+
+
+$ git push origin edemonti_task_5983:edemonti_task_5983
+
+git config http.sslVerify false
+
+Se positionner sur le répertoire souhaiter : 
+Git Bash here
+git clone https://bt1svxmb/FREC/Bytel.Reso/_git/Bytel.Reso.Serveur
+
