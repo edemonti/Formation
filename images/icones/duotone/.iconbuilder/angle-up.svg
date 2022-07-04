@@ -1,0 +1,10 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<svg viewBox="-1.9973 6.3995 32 32" xmlns="http://www.w3.org/2000/svg">
+  <g transform="matrix(0.0875, 0, 0, 0.0875, 0, 0)">
+    <defs>
+      <style>.fa-secondary{opacity:.4}</style>
+    </defs>
+    <path d="M63.52, 351.84A23.94 23.94 0 0 1 29.67, 351.84L7.05, 329.33L6.87, 329.15A23.77 23.77 0 0 1 7.05, 295.54L103.47, 199.39L160, 255.86z" fill="#727272" opacity="0.4" fill-opacity="1" class="Black" />
+    <path d="M313.13, 295.81L312.95, 295.64L177, 160.11A24 24 0 0 0 143, 160L103.49, 199.39L256.33, 352A23.94 23.94 0 0 0 290.18, 352L313, 329.43A23.78 23.78 0 0 0 313.13, 295.81z" fill="#727272" fill-opacity="1" class="Black" />
+  </g>
+</svg>

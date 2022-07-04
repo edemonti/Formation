@@ -1,0 +1,6 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<svg viewBox="-2 0.0094 32 32" xmlns="http://www.w3.org/2000/svg">
+  <g transform="matrix(0.0625, 0, 0, 0.0625, 0, 0)">
+    <path d="M356.9, 64.3L280, 64.3L224, 152.9L176, 64.3L0, 64.3L224, 448L448, 64.3L356.9, 64.3zM55.7, 96.3L109.5, 96.3L224, 294.5L338.4, 96.3L392.2, 96.3L224, 384.5L55.7, 96.3z" fill="#727272" fill-opacity="1" class="Black" />
+  </g>
+</svg>
