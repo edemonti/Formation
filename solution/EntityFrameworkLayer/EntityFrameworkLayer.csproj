@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Database\**" />
+    <EmbeddedResource Remove="Database\**" />
+    <None Remove="Database\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Entities\Person.cs" />
+    <Compile Remove="Migrations\20220624152430_1.cs" />
+    <Compile Remove="Migrations\20220624152430_1.Designer.cs" />
+    <Compile Remove="Migrations\ProductManagementContextModelSnapshot.cs" />
+    <Compile Remove="MyEntities.cs" />
+    <Compile Remove="ElementDbContext.cs" />
+    <Compile Remove="ElementDbContextFactory.cs" />
+    <Compile Remove="ElementRequestDto.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Database\element.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.17" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.17">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
+  </ItemGroup>
+
+</Project>

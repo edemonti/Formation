@@ -1,0 +1,22 @@
+﻿>> Validation au niveau des propriétés de l’objet métier :
+
+    public DateTime? DueDate
+    {
+        get => _dueDate;
+        set
+        {
+            // Validation Rule.
+            if (value.GetValueOrDefault() != DateTime.MinValue && value.GetValueOrDefault().CompareTo(new DateTime(2000, 1, 1)) < 0)
+                throw new ArgumentException("La date d’échéance doit être supérieure au 01/01/2000.");
+            SetField(ref _dueDate, value);
+        }
+    }
+    
+    <Trigger Property="Validation.HasError" Value="true">
+        <Setter Property="ToolTip" Value="{Binding RelativeSource={x:Static RelativeSource.Self}, Path=(Validation.Errors)[0].ErrorContent}"/>
+    </Trigger>
+    
+    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding SelectedTask.DueDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, 
+      Converter={StaticResource DateTimeToStringConverter}, ConverterParameter=dd/MM/yyyy, ValidatesOnExceptions=True}" />
+
+>> Validation au niveau des propriétés de l’objet métier :

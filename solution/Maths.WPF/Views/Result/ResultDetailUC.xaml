@@ -1,0 +1,43 @@
+﻿<UserControl 
+    x:Class="Maths.WPF.Views.Result.ResultDetailUC"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:Maths.WPF.ViewModels.Result"
+    mc:Ignorable="d">
+
+    <UserControl.DataContext>
+        <vm:ResultDetailViewModel />
+    </UserControl.DataContext>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="0" Grid.Row="0" Content="Nb. bonnes réponses : " Style="{StaticResource LabelTitleForm}" />
+        <Label Grid.Column="1" Grid.Row="0" Content="10" Style="{StaticResource LabelValueForm}" />
+
+        <Label Grid.Column="0" Grid.Row="1" Content="Nb. mauvaises réponses : " Style="{StaticResource LabelTitleForm}" />
+        <Label Grid.Column="1" Grid.Row="1" Content="2" Style="{StaticResource LabelValueForm}" />
+
+        <Label Grid.Column="0" Grid.Row="2" Content="% résussite : " Style="{StaticResource LabelTitleForm}" />
+        <Label Grid.Column="1" Grid.Row="2" Content="80%" Style="{StaticResource LabelValueForm}" />
+
+        <Label Grid.Column="0" Grid.Row="3" Content="Temps passé : " Style="{StaticResource LabelTitleForm}" />
+        <Label Grid.Column="1" Grid.Row="3" Content="00:01:00" Style="{StaticResource LabelValueForm}" />
+
+        <Label Grid.Column="0" Grid.Row="4" Content="Temps moyen passé / réponse : " Style="{StaticResource LabelTitleForm}" />
+        <Label Grid.Column="1" Grid.Row="4" Content="00:00:05" Style="{StaticResource LabelValueForm}" />
+    </Grid>
+
+</UserControl>

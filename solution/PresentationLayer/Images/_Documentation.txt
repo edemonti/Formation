@@ -1,0 +1,1 @@
+﻿Pour les images, déclarer l'action de génération à "Ressource"

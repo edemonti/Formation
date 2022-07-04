@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="Maths.WPF.Views.Person.PersonListUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:custom="clr-namespace:DropdownMenuControl;assembly=DropdownMenuControl"
+             xmlns:vm="clr-namespace:Maths.WPF.ViewModels.Person"
+             mc:Ignorable="d">
+    <!--<UserControl.DataContext>
+        <vm:PersonListViewModel />
+    </UserControl.DataContext>-->
+
+    <Grid>
+        <ListView ItemsSource="{Binding PersonModels, Mode=TwoWay}" SelectedItem="{Binding SelctedPersonModels, Mode=TwoWay}" IsSynchronizedWithCurrentItem="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding Name}" />
+                        <custom:DropdownMenu Grid.Column="1" Margin="10 0 0 0">
+                            <StackPanel>
+                                <Button Content="Modifier" Style="{StaticResource ButtonDropdownMenu}" Command="{Binding EditTestCommand}" />
+                                <Button Content="Supprimer" Style="{StaticResource ButtonDropdownMenu}" Command="{Binding DeleteTestCommand}" />
+                            </StackPanel>
+                        </custom:DropdownMenu>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</UserControl>

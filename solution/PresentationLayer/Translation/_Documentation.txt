@@ -1,0 +1,1 @@
+﻿Au niveau des propriétés du fichier de ressource, définir l’outil personnalisé à "PublicResXFileCodeGenerator".

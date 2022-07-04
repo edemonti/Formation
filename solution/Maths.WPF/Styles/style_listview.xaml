@@ -1,0 +1,71 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--Cellules d’une grille-->
+    <Style x:Key="ListViewItem" TargetType="{x:Type ListViewItem}">
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+    </Style>
+
+    <!--Grille-->
+    <Style TargetType="{x:Type ListView}">
+        <Setter Property="ItemContainerStyle" Value="{StaticResource ListViewItem}" />
+        <Setter Property="Background" Value="{StaticResource Theme1Color12}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Theme1Color11}" />
+        <Setter Property="BorderThickness" Value="1" />
+    </Style>
+
+    <!--Cellules contenant des textblock-->
+    <Style x:Key="ListViewTextBlock" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource {x:Type TextBlock}}">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="Padding" Value="5 0 5 0" />
+    </Style>
+
+    <!--Cellules contenant des textblock contenant des valeurs numériques-->
+    <Style x:Key="ListViewTextBlockNum" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource ListViewTextBlock}">
+    </Style>
+
+    <!--Cellules contenant des textblock contenant du texte-->
+    <Style x:Key="ListViewTextBlockText" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource ListViewTextBlock}">
+    </Style>
+
+    <!--Cellules contenant des textblock contenant des dates-->
+    <Style x:Key="ListViewTextBlockDate" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource ListViewTextBlock}">
+    </Style>
+
+    <!--Cellules contenant des textbox-->
+    <Style x:Key="ListViewTextBox" TargetType="{x:Type TextBox}" BasedOn="{StaticResource {x:Type TextBox}}">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+    </Style>
+
+    <!--Cellules contenant des textbox contenant des valeurs numériques-->
+    <Style x:Key="ListViewTextBoxNum" TargetType="{x:Type TextBox}" BasedOn="{StaticResource ListViewTextBox}">
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+    </Style>
+
+    <!--Cellules contenant des textbox contenant du texte-->
+    <Style x:Key="ListViewTextBoxText" TargetType="{x:Type TextBox}" BasedOn="{StaticResource ListViewTextBox}">
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+    </Style>
+
+    <!--Cellules contenant des textbox contenant des dates-->
+    <Style x:Key="ListViewTextBoxDate" TargetType="{x:Type TextBox}" BasedOn="{StaticResource ListViewTextBox}">
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+    </Style>
+
+    <!--Cellules contenant une checkbox-->
+    <Style x:Key="ListViewCheckBox" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource {x:Type CheckBox}}">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <!--Cellules contenant une image-->
+    <Style x:Key="ListViewImage" TargetType="{x:Type Image}">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Height" Value="16" />
+    </Style>
+    
+</ResourceDictionary>

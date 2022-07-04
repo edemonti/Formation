@@ -1,0 +1,35 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--Thème 1-->
+    <SolidColorBrush x:Key="Theme1Color1" Color="#303098" />
+    <SolidColorBrush x:Key="Theme1Color2" Color="#456ABC" />
+    <SolidColorBrush x:Key="Theme1Color3" Color="#567BCD" />
+    <SolidColorBrush x:Key="Theme1Color4" Color="#AAAAAA" />
+    <SolidColorBrush x:Key="Theme1Color5" Color="#EFEFEF" />
+    <SolidColorBrush x:Key="Theme1Color6" Color="#FFFFFF" />
+
+    <!--Thème 2-->
+    <SolidColorBrush x:Key="Theme2Color1" Color="#C1C13E" />
+    <SolidColorBrush x:Key="Theme2Color2" Color="#E1E130" />
+    <SolidColorBrush x:Key="Theme2Color3" Color="#F2F241" />
+    <SolidColorBrush x:Key="Theme2Color4" Color="#AAAAAA" />
+    <SolidColorBrush x:Key="Theme2Color5" Color="#EFEFEF" />
+    <SolidColorBrush x:Key="Theme2Color6" Color="#FFFFFF" />
+
+    <!--Thème 3-->
+    <SolidColorBrush x:Key="Theme3Color1" Color="#AB149B" />
+    <SolidColorBrush x:Key="Theme3Color2" Color="#DA12C5" />
+    <SolidColorBrush x:Key="Theme3Color3" Color="#EB23D6" />
+    <SolidColorBrush x:Key="Theme3Color4" Color="#AAAAAA" />
+    <SolidColorBrush x:Key="Theme3Color5" Color="#EFEFEF" />
+    <SolidColorBrush x:Key="Theme3Color6" Color="#FFFFFF" />
+
+    <!--Thème 4-->
+    <SolidColorBrush x:Key="Theme4Color1" Color="#46BD19" />
+    <SolidColorBrush x:Key="Theme4Color2" Color="#42D80A" />
+    <SolidColorBrush x:Key="Theme4Color3" Color="#63E91B" />
+    <SolidColorBrush x:Key="Theme4Color4" Color="#AAAAAA" />
+    <SolidColorBrush x:Key="Theme4Color5" Color="#EFEFEF" />
+    <SolidColorBrush x:Key="Theme4Color6" Color="#FFFFFF" />
+
+</ResourceDictionary>

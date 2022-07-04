@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Rows>
+	<Row>
+		<A1>1</A1>
+		<A2>1</A2>
+		<Result>2</Result>
+	</Row>
+	<Row>
+		<A1>1</A1>
+		<A2>2</A2>
+		<Result>3</Result>
+	</Row>
+	<Row>
+		<A1>1</A1>
+		<A2>-1</A2>
+		<Result>1</Result>
+	</Row>
+
+
+	<!--Liste des projets-->
+	<OpenEnsembleProjectsListe>
+		<p_ipd_id>250</p_ipd_id>
+		<result_count>1</result_count>
+		<result_active>true</result_active>
+	</OpenEnsembleProjectsListe>
+	<OpenEnsembleProjectsListe>
+		<p_ipd_id>251</p_ipd_id>
+		<result_count>1</result_count>
+		<result_active>true</result_active>
+	</OpenEnsembleProjectsListe>
+	<OpenEnsembleProjectsListe>
+		<p_ipd_id>252</p_ipd_id>
+		<result_count>1</result_count>
+		<result_active>true</result_active>
+	</OpenEnsembleProjectsListe>
+
+	<!--Détail d’un projet-->
+	<OpenEnsembleProjectInfos>
+		<p_ipd_id>250</p_ipd_id>
+		<result_count>1</result_count>
+		<result_active>true</result_active>
+	</OpenEnsembleProjectInfos>
+	<OpenEnsembleProjectInfos>
+		<p_ipd_id>251</p_ipd_id>
+		<result_count>1</result_count>
+		<result_active>true</result_active>
+	</OpenEnsembleProjectInfos>
+	<OpenEnsembleProjectInfos>
+		<p_ipd_id>252</p_ipd_id>
+		<result_count>1</result_count>
+		<result_active>true</result_active>
+	</OpenEnsembleProjectInfos>
+
+
+	<!--<OpenEnsembleProjectsListeTest>
+    <P_IPD_ID>250</P_IPD_ID>
+  </OpenEnsembleProjectsListeTest>
+  <OpenEnsembleProjectsListeTest>
+    <P_IPD_ID>251</P_IPD_ID>
+  </OpenEnsembleProjectsListeTest>
+  <OpenEnsembleProjectsListeTest>
+    <P_IPD_ID>252</P_IPD_ID>
+  </OpenEnsembleProjectsListeTest>
+
+  <OpenEnsembleProjectInfosTest>
+    <P_IPD_ID>250</P_IPD_ID>
+  </OpenEnsembleProjectInfosTest>
+  <OpenEnsembleProjectInfosTest>
+    <P_IPD_ID>251</P_IPD_ID>
+  </OpenEnsembleProjectInfosTest>
+  <OpenEnsembleProjectInfosTest>
+    <P_IPD_ID>252</P_IPD_ID>
+  </OpenEnsembleProjectInfosTest>-->
+
+	<OpenEnsembleModelesProjetsPartielsTest />
+</Rows>

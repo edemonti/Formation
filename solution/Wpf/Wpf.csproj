@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+	  <TargetFramework>net5.0-windows7.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Technical\**" />
+    <Compile Remove="UserControlModels\**" />
+    <EmbeddedResource Remove="Technical\**" />
+    <EmbeddedResource Remove="UserControlModels\**" />
+    <None Remove="Technical\**" />
+    <None Remove="UserControlModels\**" />
+    <Page Remove="Technical\**" />
+    <Page Remove="UserControlModels\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="BusinessObjects\ElementBusinessObject.cs" />
+    <Compile Remove="UserControls\BaseUC.cs" />
+    <Compile Remove="Views\Save.xaml.cs" />
+    <Compile Remove="Views\ElementCntView.xaml.cs" />
+    <Compile Remove="Views\ElementsView.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Views\MainWindow.xaml" />
+    <Page Remove="Views\Save.xaml" />
+    <Page Remove="Views\ElementCntView.xaml" />
+    <Page Remove="Views\ElementsView.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogicalLayer\BusinessLogicalLayer.csproj" />
+    <ProjectReference Include="..\PresentationLayer\PresentationLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="BusinessObjects\" />
+  </ItemGroup>
+
+</Project>

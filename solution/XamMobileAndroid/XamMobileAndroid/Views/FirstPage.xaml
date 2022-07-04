@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamMobileAndroid.Views.FirstPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Horizontal">
+            <Label x:Name="LabelDateDuJour" HorizontalOptions="CenterAndExpand" />
+            <Button Clicked="OnPreviousPageButtonClicked" Text="Previous Page" VerticalOptions="Center"></Button>
+            <Button Clicked="OnNextPageButtonClicked" Text="Next Page" VerticalOptions="Center"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

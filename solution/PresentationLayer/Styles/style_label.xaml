@@ -1,0 +1,69 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!--Label par défaut-->
+    <Style TargetType="{x:Type Label}">
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="Margin" Value="1" />
+        <Setter Property="Padding" Value="0 1 0 1" />
+        <Setter Property="FontFamily" Value="Trebuchet MS" />
+        <Setter Property="FontSize" Value="10" />
+    </Style>
+
+    <!--Labels des formulaires-->
+    <Style x:Key="LabelForm" TargetType="{x:Type Label}" BasedOn="{StaticResource {x:Type Label}}">
+        <Setter Property="Foreground" Value="{StaticResource Theme4Color1}" />
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+    <!--Header de l’application-->
+    <Style x:Key="LabelHeader" TargetType="{x:Type Label}" BasedOn="{StaticResource {x:Type Label}}">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Background" Value="{StaticResource Theme4Color1}" />
+        <Setter Property="Foreground" Value="{StaticResource Theme4Color5}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Theme4Color5}" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="BorderThickness" Value="0,0,0,2" />
+    </Style>
+
+    <!--Pied de l’application-->
+    <Style x:Key="LabelFooter" TargetType="{x:Type Label}" BasedOn="{StaticResource {x:Type Label}}">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Right" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Background" Value="{StaticResource Theme4Color1}" />
+        <Setter Property="Foreground" Value="{StaticResource Theme4Color5}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Theme4Color5}" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Padding" Value="0,0,5,0" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="FontStyle" Value="Italic" />
+        <Setter Property="BorderThickness" Value="0,2,0,0" />
+    </Style>
+
+    <!--Header de l’application-->
+    <Style x:Key="LabelHeaderPopup" TargetType="{x:Type Label}" BasedOn="{StaticResource {x:Type Label}}">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Background" Value="{StaticResource Theme4Color1}" />
+        <Setter Property="Foreground" Value="{StaticResource Theme4Color5}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Theme4Color5}" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="BorderThickness" Value="0,0,0,2" />
+        <Setter Property="Padding" Value="5,0,0,0" />
+    </Style>
+    
+</ResourceDictionary>

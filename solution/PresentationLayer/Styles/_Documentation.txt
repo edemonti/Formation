@@ -1,0 +1,19 @@
+﻿Style de base : https://github.com/dotnet/wpf/blob/c271205b80c27df976acbd7236ec637090d127c1/src/Microsoft.DotNet.Wpf/src/Themes/XAML/TextBox.xaml#L415-L441
+
+Faire référence à un contrôle parent : {Binding Path=Title, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}, AncestorLevel=10}}
+
+Pour pouvoir ajouter des dictionnaires de ressources xaml, ajouter dans le csproj : 
+<UseWPF>true</UseWPF>
+
+Expander Background : 
+                <Expander Grid.Row="2" Grid.Column="1">
+                    <Expander.Background>
+                        <LinearGradientBrush>
+                            <GradientStop Color="#EEE" Offset="0"/>
+                            <GradientStop Color="#FFF" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Expander.Background>
+                <WrapPanel Orientation="Vertical" Height="Auto">
+                    <TextBlock Text="{Binding BusinessMessage.DetailMessagesFormated, Mode=OneWay}" Height="Auto" Style="{StaticResource TextBlockDetailPopup}" />
+                </WrapPanel>
+            </Expander>

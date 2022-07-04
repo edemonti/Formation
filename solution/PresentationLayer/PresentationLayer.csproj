@@ -1,0 +1,82 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+  	<UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\add.ico" />
+    <None Remove="Images\background1.jpg" />
+    <None Remove="Images\background2.png" />
+    <None Remove="Images\background3.jpg" />
+    <None Remove="Images\background4.jpg" />
+    <None Remove="Images\background5.png" />
+    <None Remove="Images\background6.jpg" />
+    <None Remove="Images\background7.jpg" />
+    <None Remove="Images\delete.ico" />
+    <None Remove="Images\edit.ico" />
+    <None Remove="Images\error.ico" />
+    <None Remove="Images\information.ico" />
+    <None Remove="Images\success.ico" />
+    <None Remove="Images\warning.ico" />
+    <None Remove="Styles\style_button.xaml" />
+    <None Remove="Styles\style_checkbox.xaml" />
+    <None Remove="Styles\style_color.xaml" />
+    <None Remove="Styles\style_grid.xaml" />
+    <None Remove="Styles\style_image.xaml" />
+    <None Remove="Styles\style_label.xaml" />
+    <None Remove="Styles\style_listview.xaml" />
+    <None Remove="Styles\style_stackpanel.xaml" />
+    <None Remove="Styles\style_textblock.xaml" />
+    <None Remove="Styles\style_textbox.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Technical\Technical.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\add.ico" />
+    <Resource Include="Images\background1.jpg" />
+    <Resource Include="Images\background2.png" />
+    <Resource Include="Images\background3.jpg" />
+    <Resource Include="Images\background4.jpg" />
+    <Resource Include="Images\background5.png" />
+    <Resource Include="Images\background6.jpg" />
+    <Resource Include="Images\background7.jpg" />
+    <Resource Include="Images\delete.ico" />
+    <Resource Include="Images\edit.ico" />
+    <Resource Include="Images\error.ico" />
+    <Resource Include="Images\information.ico" />
+    <Resource Include="Images\success.ico" />
+    <Resource Include="Images\warning.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Translation\Lang.Designer.cs">
+      <DependentUpon>Lang.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Translation\Lang.resx">
+      <LastGenOutput>Lang.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Styles\style_expander.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\style_scrollviewer.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>

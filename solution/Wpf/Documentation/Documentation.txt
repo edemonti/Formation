@@ -1,0 +1,50 @@
+﻿View
+<Grid x:Name="LayoutRoot">
+    <ListBox ItemsSource="{Binding}">
+        <ListBox.ItemTemplate>
+            <DataTemplate>
+                <StackPanel>
+                    <TextBlock x:Name="Name" Text="{Binding Name}" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                </StackPanel>
+            </DataTemplate>
+        </ListBox.ItemTemplate>
+    </ListBox>
+</Grid>
+
+MainPage.xaml:
+<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+    <StackPanel>
+        <TextBox x:Name="txtSearch"/>
+        <TextBlock Text="Items:" />
+        <views:ItemView x:Name="ItemsOnPage" />
+    </StackPanel>
+</Grid>
+
+MainPage.xaml.cs:
+public partial class MainPage : PhoneApplicationPage
+{
+    private ViewModel vm;
+
+    // Constructor
+    public MainPage()
+    {
+        InitializeComponent();
+        txtSearch.KeyUp += txtSearch_KeyUp;
+        vm = new ViewModel();
+    }
+
+    void txtSearch_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+    {
+        if (e.Key == Key.Enter)
+        {
+            vm.Search(txtSearch.Text);
+        }
+    }
+
+    protected override void OnNavigatedTo(System.Windows.Navigation.NavigationEventArgs e)
+    {
+        base.OnNavigatedTo(e);
+        vm.GetDefaultItems();
+        ItemsOnPage.DataContext = vm.Items;
+    }
+}

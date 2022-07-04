@@ -1,0 +1,47 @@
+﻿<UserControl
+    x:Class="Maths.WPF.Views.Result.ResultView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:Maths.WPF.ViewModels.Result"
+    xmlns:view="clr-namespace:Maths.WPF.Views.Result"
+    mc:Ignorable="d"
+    MinHeight="400"
+    MinWidth="300">
+
+    <UserControl.DataContext>
+        <vm:ResultViewModel />
+    </UserControl.DataContext>
+    
+    <Grid Style="{StaticResource GridApplication}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+
+        <!--Titre de la page-->
+        <Border Grid.Row="0" Style="{StaticResource BorderHeader}">
+            <Label Content="Résultat du test" Style="{StaticResource LabelHeader}" />
+        </Border>
+
+        <!--Corps de la page-->
+        <Border Grid.Row="1" Style="{StaticResource BorderBody}">
+            <view:ResultAppreciationUC />
+        </Border>
+        <Border Grid.Row="2" Style="{StaticResource BorderBody}">
+            <view:ResultDetailUC />
+        </Border>
+
+        <!--Actions-->
+        <Border Grid.Row="3" Style="{StaticResource BorderFooter}">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Refaire" Command="{Binding AccessToSetupCommand}" />
+                <Button Content="Accueil" Command="{Binding AccessToHomeCommand}" />
+            </StackPanel>
+        </Border>
+    </Grid>
+
+</UserControl>

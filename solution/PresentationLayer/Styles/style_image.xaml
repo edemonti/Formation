@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ImageBrush x:Key="Background2" ImageSource="pack://application:,,,/PresentationLayer;component/Images/background2.png" Stretch="UniformToFill" TileMode="None" Opacity="0.2" />
+    <ImageBrush x:Key="Background5" ImageSource="pack://application:,,,/PresentationLayer;component/Images/background5.png" Stretch="UniformToFill" TileMode="None" Opacity="0.2" />
+    <ImageBrush x:Key="Background6" ImageSource="pack://application:,,,/PresentationLayer;component/Images/background6.jpg" Stretch="UniformToFill" TileMode="None" Opacity="0.2" />
+    <!--<ImageBrush x:Key="Background6" ImageSource="../Images/background6.jpg" Stretch="Fill" TileMode="None" />
+    <ImageBrush x:Key="Background7" ImageSource="../Images/background7.jpg" Stretch="Fill" TileMode="None" />-->
+    <!--<Image x:Key="BackgroundXX" Source="pack://application:,,,/PresentationLayer;component/Images/background5.png"  />-->
+    <!--<Image x:Key="Add" Source="pack://application:,,,/PresentationLayer;component/Images/add.ico" Stretch="UniformToFill" />
+    <Image x:Key="Add2" Source="pack://application:,,,/PresentationLayer;component/Images/add_16x16.png" Stretch="UniformToFill" />-->
+    <!--<ImageBrush x:Key="Edit" ImageSource="pack://application:,,,/PresentationLayer.Style;component/Images/edit_16x16.png" Stretch="UniformToFill" TileMode="None" />
+    <ImageBrush x:Key="Delete" ImageSource="pack://application:,,,/PresentationLayer.Style;component/Images/delete_16x16.png" Stretch="UniformToFill" TileMode="None" />-->
+
+    <!--Image des popup-->
+    <Style x:Key="ImagePopup" TargetType="{x:Type Image}">
+        <Setter Property="Height" Value="48" />
+    </Style>
+</ResourceDictionary>

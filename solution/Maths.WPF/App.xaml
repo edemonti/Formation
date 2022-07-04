@@ -1,0 +1,28 @@
+﻿<Application 
+    x:Class="Maths.WPF.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Maths.WPF;component/Styles/style_color.xaml" />
+                <!--<ResourceDictionary Source="pack://application:,,,/Maths.WPF;component/Styles/style_image.xaml" />-->
+
+                <ResourceDictionary Source="pack://application:,,,/Maths.WPF;component/Styles/style_border.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Maths.WPF;component/Styles/style_label.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Maths.WPF;component/Styles/style_button.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Maths.WPF;component/Styles/style_grid.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Maths.WPF;component/Styles/style_listview.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Maths.WPF;component/Styles/style_checkbox.xaml" />
+
+                <!--
+                <ResourceDictionary Source="pack://application:,,,/Maths.WPF;component/Styles/style_textblock.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Maths.WPF;component/Styles/style_textbox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Maths.WPF;component/Styles/style_stackpanel.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Maths.WPF;component/Styles/style_scrollviewer.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Maths.WPF;component/Styles/style_expander.xaml" />-->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

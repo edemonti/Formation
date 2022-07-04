@@ -1,0 +1,17 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--Grille principale de l’application-->
+    <Style x:Key="GridApplication" TargetType="{x:Type Grid}">
+        <Setter Property="Background" Value="{StaticResource Theme1Color03}" />
+    </Style>
+
+    <!--Grille principale des popups-->
+    <!--<Style x:Key="GridPopup" TargetType="{x:Type Grid}">
+        <Setter Property="Background" Value="{StaticResource Background2}" />
+        <Setter Property="Width" Value="400" />
+        <Setter Property="MinHeight" Value="100" />
+    </Style>-->
+    
+</ResourceDictionary>
