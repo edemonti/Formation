@@ -1,0 +1,2 @@
+BTNetModuleInterfaces,Version=4.0.7.0,PublicKeyToken=949bd2b8ca1995bf
+BTNetModuleInterfaces.Design,Version=4.0.7.0,PublicKeyToken=8134a4e20fbfd169
