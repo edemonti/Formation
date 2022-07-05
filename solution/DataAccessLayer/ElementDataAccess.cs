@@ -264,7 +264,7 @@ namespace DataAccessLayer
 
                 if (executeDto.IsReturnEntityEnabled)
                 {
-                    ElementRequestDto requestDto = new ElementRequestDto
+                    ElementRequestDto requestDto = new()
                     {
                         IsSpecifiedIdList = true,
                         IdList = returnEntities.Select(s => s.Id).ToList()
@@ -422,15 +422,7 @@ namespace DataAccessLayer
             // Sauvegarde et récupération de l’entité.
             if (executeDto.IsSaveEnabled)
             {
-                try
-                {
-                    Context.SaveChanges();
-
-                }
-                catch (Exception ex)
-                {
-
-                }
+                Context.SaveChanges();
                 return executeDto.IsReturnEntityEnabled ? (this as IElementDataAccess).GetEntity(entity.Id, executeDto.Includes, executeDto.AsNoTracking) : null;
             }
             else
