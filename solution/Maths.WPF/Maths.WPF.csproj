@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0-windows7.0</TargetFramework>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
@@ -25,7 +25,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BusinessLogicalLayer\BusinessLogicalLayer.csproj" />
-    <ProjectReference Include="..\Models\Models.csproj" />
     <ProjectReference Include="..\PresentationLayer\PresentationLayer.csproj" />
     <ProjectReference Include="..\Technical\Technical.csproj" />
   </ItemGroup>
@@ -43,6 +42,12 @@
     <Compile Update="Views\Setup\SetupView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>

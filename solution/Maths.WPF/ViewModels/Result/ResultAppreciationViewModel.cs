@@ -21,7 +21,7 @@ namespace Maths.WPF.ViewModels.Result
         #region Constructors
 
         public ResultAppreciationViewModel()
-            : base()
+            : base("DefaultConnectionString")
         {
         }
 

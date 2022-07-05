@@ -31,7 +31,7 @@ namespace Maths.WPF.ViewModels.Test
         #region Constructors
 
         public TestOperationViewModel()
-            : base()
+            : base("DefaultConnectionString")
         {
         }
 

@@ -41,7 +41,7 @@ namespace Maths.WPF.ViewModels.Setup
         #region Constructors
 
         public SetupTestListItemViewModel(string testName)
-            : base()
+            : base("DefaultConnectionString")
         {
             TestName = testName;
         }

@@ -1,7 +1,6 @@
-﻿using System.Collections.ObjectModel;
+﻿using Maths.WPF.Commands;
+using System.Collections.ObjectModel;
 using System.Linq;
-using Maths.WPF.Commands;
-using Maths.WPF.Models;
 using Technical.ViewModels;
 
 namespace Maths.WPF.ViewModels.Person
@@ -13,8 +12,8 @@ namespace Maths.WPF.ViewModels.Person
         /// <summary>
         /// Liste des personnes.
         /// </summary>
-        private ObservableCollection<PersonModel> _personModels;
-        public ObservableCollection<PersonModel> PersonModels
+        private ObservableCollection<Entities.Person> _personModels;
+        public ObservableCollection<Entities.Person> PersonModels
         {
             get => _personModels;
             set => SetField(ref _personModels, value);
@@ -23,8 +22,8 @@ namespace Maths.WPF.ViewModels.Person
         /// <summary>
         /// Personne sélectionnée.
         /// </summary>
-        private PersonModel _selectedPersonModels;
-        public PersonModel SelectedPersonModels
+        private Entities.Person _selectedPersonModels;
+        public Entities.Person SelectedPersonModels
         {
             get => _selectedPersonModels;
             set => SetField(ref _selectedPersonModels, value);
@@ -48,12 +47,13 @@ namespace Maths.WPF.ViewModels.Person
         #region Constructors
 
         public PersonViewModel()
+            : base("DefaultConnectionString")
         {
-            PersonModels = new ObservableCollection<PersonModel>
+            PersonModels = new ObservableCollection<Entities.Person>
             {
-                new PersonModel("de MONTI", "Emmanuel", 23),
-                new PersonModel("de MONTI", "Chloé", 5),
-                new PersonModel("de MONTI", "Camille", 2)
+                new Entities.Person("de MONTI", "Emmanuel", 23),
+                new Entities.Person("de MONTI", "Chloé", 5),
+                new Entities.Person("de MONTI", "Camille", 2)
             };
 
             SelectedPersonModels = PersonModels.First();

@@ -1,6 +1,4 @@
-﻿using System.Collections.ObjectModel;
-using Technical.ViewModels;
-using Maths.WPF.Models;
+﻿using Technical.ViewModels;
 
 namespace Maths.WPF.ViewModels.Person
 {
@@ -31,6 +29,7 @@ namespace Maths.WPF.ViewModels.Person
         #endregion
 
         public PersonListViewModel()
+            : base("DefaultConnectionString")
         {
             //PersonModels = new ObservableCollection<PersonModel>
             //{

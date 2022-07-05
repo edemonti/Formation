@@ -21,7 +21,7 @@ namespace Maths.WPF.ViewModels.Setup
         #region Constructors
 
         public SetupTestDetailViewModel()
-            : base()
+            : base("DefaultConnectionString")
         {
         }
 

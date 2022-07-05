@@ -21,7 +21,7 @@ namespace Maths.WPF.ViewModels.Test
         #region Constructors
 
         public TestAdvancementViewModel()
-            : base()
+            : base("DefaultConnectionString")
         {
         }
 

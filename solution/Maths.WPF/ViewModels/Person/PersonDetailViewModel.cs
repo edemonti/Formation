@@ -1,5 +1,4 @@
-﻿using Maths.WPF.Models;
-using Technical.ViewModels;
+﻿using Technical.ViewModels;
 
 namespace Maths.WPF.ViewModels.Person
 {
@@ -10,8 +9,8 @@ namespace Maths.WPF.ViewModels.Person
         /// <summary>
         /// Personne sélectionnée.
         /// </summary>
-        private PersonModel _selectedPersonModels;
-        public PersonModel SelectedPersonModels
+        private Entities.Person _selectedPersonModels;
+        public Entities.Person SelectedPersonModels
         {
             get => _selectedPersonModels;
             set => SetField(ref _selectedPersonModels, value);
@@ -49,9 +48,10 @@ namespace Maths.WPF.ViewModels.Person
 
         #endregion
 
-        #region
+        #region Constructors
 
         public PersonDetailViewModel()
+            : base("DefaultConnectionString")
         {
             Name = "[Name]";
             Surname = "[Surname]";
@@ -59,6 +59,7 @@ namespace Maths.WPF.ViewModels.Person
         }
 
         public PersonDetailViewModel(string name, string surname, int age)
+            : base("DefaultConnectionString")
         {
             Name = name;
             Surname = surname;

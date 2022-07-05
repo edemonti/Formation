@@ -2,11 +2,11 @@
 <html>
 <head>
     <title>@ViewBag.Title - My persnnal layout</title>
-    @RenderSection("ExternalCSS", true)
+    @RenderSection("ExternalCSS", false)
 </head>
 <body style="background-color:#FFBBAA">
     @*@Scripts.Render("~/bundles/jquery")*@
     @RenderBody()
-    @RenderSection("ExternalJS", true)
+    @RenderSection("ExternalJS", false)
 </body>
 </html>

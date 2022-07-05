@@ -36,7 +36,7 @@ namespace Maths.WPF.ViewModels.Home
         #region Constructors
 
         public HomeViewModel()
-            : base()
+            : base("DefaultConnectionString")
         {
         }
 

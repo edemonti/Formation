@@ -1,8 +1,8 @@
-﻿using Technical.Models;
+﻿using EntityFrameworkLayer.Entities;
 
-namespace Maths.WPF.Models
+namespace Maths.WPF.Entities
 {
-    public class PersonModel : BaseModel
+    public class Person : BaseEntity
     {
         #region Properties
 
@@ -40,12 +40,12 @@ namespace Maths.WPF.Models
 
         #region Constructors
 
-        public PersonModel()
+        public Person()
             : base()
         {
         }
 
-        public PersonModel(string name, string surname, int age)
+        public Person(string name, string surname, int age)
             : base()
         {
             Name = name;

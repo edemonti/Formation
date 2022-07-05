@@ -1,5 +1,4 @@
 ﻿using System;
-using Maths.WPF.Models;
 using Technical.ViewModels;
 
 namespace Maths.WPF.ViewModels.Person
@@ -11,8 +10,8 @@ namespace Maths.WPF.ViewModels.Person
         /// <summary>
         /// Personne sélectionnée.
         /// </summary>
-        private PersonModel _selectedPersonModels;
-        public PersonModel SelectedPersonModels
+        private Entities.Person _selectedPersonModels;
+        public Entities.Person SelectedPersonModels
         {
             get => _selectedPersonModels;
             set
@@ -23,6 +22,11 @@ namespace Maths.WPF.ViewModels.Person
         }
 
         #endregion
+
+        public SelectedPersonStore()
+            : base("DefaultConnectionString")
+        {
+        }
 
         #region Events
 

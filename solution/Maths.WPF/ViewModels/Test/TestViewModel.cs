@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Maths.WPF.Commands;
+﻿using Maths.WPF.Commands;
 using Technical.ViewModels;
 
 namespace Maths.WPF.ViewModels.Test
@@ -46,7 +43,7 @@ namespace Maths.WPF.ViewModels.Test
         #region Constructors
 
         public TestViewModel()
-            : base()
+            : base("DefaultConnectionString")
         {
         }
 

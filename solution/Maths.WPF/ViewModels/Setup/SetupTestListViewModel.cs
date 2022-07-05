@@ -29,7 +29,7 @@ namespace Maths.WPF.ViewModels.Setup
         #region Constructors
 
         public SetupTestListViewModel()
-            : base()
+            : base("DefaultConnectionString")
         {
             SetupTestListItemViewModels = new ObservableCollection<SetupTestListItemViewModel>();
             SetupTestListItemViewModels.Add(new SetupTestListItemViewModel("Multiplication 1"));
