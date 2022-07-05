@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Threading.Tasks;
-using System.Xml.Linq;
-using DataAccessLayer.Interface;
+﻿using DataAccessLayer.Interface;
 using EntityFrameworkLayer.Context;
 using EntityFrameworkLayer.Entities;
 using EntityFrameworkLayer.ExecuteDto;
 using EntityFrameworkLayer.RequestDto;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Threading.Tasks;
+using System.Xml.Linq;
 using Technical.Exceptions;
 
 namespace DataAccessLayer
@@ -93,10 +94,50 @@ namespace DataAccessLayer
         /// </summary>
         Element IBaseDataAccess<Element, ElementRequestDto, ElementExecuteDto>.GetEntity(int id, List<string> includes, bool asNoTracking)
         {
+            // TODO EDEMONTI : Gérer le cancel.
             var queryable = Context.Elements.AsQueryable()
                 .Where(w => w.Id == id);
 
-            return asNoTracking ? queryable.AsNoTracking().FirstOrDefault() : queryable.FirstOrDefault();
+            var entity = asNoTracking ? queryable.AsNoTracking().FirstOrDefault() : queryable.FirstOrDefault();
+
+            foreach (var entry in Context.ChangeTracker.Entries().Where(w => w.Entity.Equals(entity) && entity.State != EntityState.Unchanged))
+            {
+                switch (entry.State)
+                {
+                    case EntityState.Modified:
+                    case EntityState.Deleted:
+                        entry.State = EntityState.Modified; //Revert changes made to deleted entity.
+                        entry.State = EntityState.Unchanged;
+                        break;
+                    case EntityState.Added:
+                        entry.State = EntityState.Detached;
+                        break;
+                }
+            }
+
+            //if (entity.State != EntityState.Unchanged)
+            //{
+            //    DbEntityEntry entry = Context.Entry(entity);
+            //    if (entity.State == EntityState.Added || entity.State == EntityState.Detached)
+            //    {
+            //        entity.State = EntityState.Detached;
+            //    }
+            //    if (entity.State == EntityState.Deleted)
+            //    {
+            //        Context.Entry(entity).Reload();
+            //    }
+            //
+            //    foreach (string propertyName in entity.OriginalValues.PropertyNames)
+            //    {
+            //        // Get and Set the Property value by the Property Name.   
+            //        entity.Property(propertyName).CurrentValue = entity.Property(propertyName).OriginalValue;
+            //    }
+            //
+            //    
+            //    entity.State = EntityState.Unchanged;
+            //}
+
+            return entity;
         }
 
         /// <summary>
@@ -388,7 +429,7 @@ namespace DataAccessLayer
                 }
                 catch (Exception ex)
                 {
-                    
+
                 }
                 return executeDto.IsReturnEntityEnabled ? (this as IElementDataAccess).GetEntity(entity.Id, executeDto.Includes, executeDto.AsNoTracking) : null;
             }

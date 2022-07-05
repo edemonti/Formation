@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using EntityFrameworkLayer.Context;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using EntityFrameworkLayer.Context;
 using Technical.Messages;
 
 namespace Technical.ViewModels
@@ -24,11 +25,13 @@ namespace Technical.ViewModels
         #region Constructors
 
         /// <summary>
-        /// Constructeur de la classe.
+        /// Constructeur de la classe permettant la création du contexte.
         /// </summary>
         public BaseViewModel(string connectionName)
         {
-            Context = CreateContext(connectionName);
+            var options = new DbContextOptionsBuilder<MyFormationContext>().Options;
+            // var options = new DbContextOptionsBuilder<MyFormationContext>().UseInMemoryDatabase(Guid.NewGuid().ToString("N")).Options;
+            Context = new MyFormationContext(options, connectionName);
         }
 
         #endregion

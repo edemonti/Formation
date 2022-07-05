@@ -1,4 +1,4 @@
-﻿<Page x:Class="Wpf.Views.TaskView"
+﻿<Page x:Class="Wpf.Views.ElementView"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -15,13 +15,13 @@
       d:DesignHeight="450" d:DesignWidth="800">
 
     <Page.DataContext>
-        <vm:TaskViewModel />
+        <vm:ElementViewModel />
     </Page.DataContext>
 
     <Page.Resources>
         <conv:DueDateToColorConverter x:Key="DueDateToColorConverter" />
         <conv:DateTimeToStringConverter x:Key="DateTimeToStringConverter" />
-        <conv:ModelStateToIconConverter x:Key="ModelStateToIconConverter" />
+        <conv:EntityStateToIconConverter x:Key="EntityStateToIconConverter" />
 
         <!--<Style x:Key="textBoxInError" TargetType="TextBox">
             <Style.Triggers>
@@ -51,7 +51,7 @@
 
         <!--Liste des tâches-->
         <ScrollViewer Grid.Row="0"  VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-            <ListView ItemsSource="{Binding Tasks, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedTask, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsSynchronizedWithCurrentItem="True">
+            <ListView ItemsSource="{Binding Elements, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedElement, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsSynchronizedWithCurrentItem="True">
                 <ListView.View>
                     <GridView>
                         <GridView.Columns>
@@ -140,7 +140,7 @@
                             <GridViewColumn Header="{x:Static lang:Lang.TaskState}" Width="70">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Image Source="{Binding Path=State, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource ModelStateToIconConverter}}" Style="{StaticResource ListViewImage}" />
+                                        <Image Source="{Binding Path=State, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource EntityStateToIconConverter}}" Style="{StaticResource ListViewImage}" />
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>

@@ -1,27 +1,29 @@
-using System.Collections.Generic;
-using System.Linq;
 using DataAccessLayer.Interface;
 using EntityFrameworkLayer.Entities;
 using EntityFrameworkLayer.ExecuteDto;
 using EntityFrameworkLayer.RequestDto;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Technical.Exceptions;
+using Technical.Test;
 
 namespace DataAccessLayer.Test
 {
     /// <summary>
-    /// Classe de test de l’interface <see cref="ICategoryDataAccess"/>.
+    /// Classe de test de l’interface <see cref="IElementDataAccess"/>.
     /// </summary>
     [TestClass]
-    public class CategoryDataAccessTest : BaseTest
+    public class ElementDataAccessTest : BaseTest
     {
         #region Private Fields
 
         /// <summary>
         /// Voir <see cref="IDataAccessBase"/>.
         /// </summary>
-        private readonly ICategoryDataAccess _CategoryDataAccess;
+        private readonly IElementDataAccess _elementDataAccess;
 
         #endregion
 
@@ -30,10 +32,10 @@ namespace DataAccessLayer.Test
         /// <summary>
         /// Constructeur de la classe.
         /// </summary>
-        public CategoryDataAccessTest()
+        public ElementDataAccessTest()
             : base("DefaultConnectionString")
         {
-            _CategoryDataAccess = new CategoryDataAccess(base.Context);
+            _elementDataAccess = new ElementDataAccess(base.Context);
         }
 
         #endregion
@@ -52,10 +54,10 @@ namespace DataAccessLayer.Test
                 // Création.
 
                 // Préparation.
-                Category entity = new("à récupérer");
+                Element entity = new(0, "new", string.Empty, null, 0, false, false, false);
 
                 // Exécution.
-                entity = _CategoryDataAccess.ExecuteMethod(() => _CategoryDataAccess.Create(entity, new CategoryExecuteDto()));
+                entity = _elementDataAccess.ExecuteMethod(() => _elementDataAccess.Create(entity, new ElementExecuteDto()));
 
                 // Assert.
                 Assert.IsNotNull(entity);
@@ -68,7 +70,7 @@ namespace DataAccessLayer.Test
                 var id = entity.Id;
 
                 // Exécution.
-                entity = _CategoryDataAccess.ExecuteMethod(() => _CategoryDataAccess.GetEntity(id, includes, false));
+                entity = _elementDataAccess.ExecuteMethod(() => _elementDataAccess.GetEntity(id, includes, false));
 
                 // Assert.
                 Assert.IsNotNull(entity);
@@ -89,14 +91,14 @@ namespace DataAccessLayer.Test
             {
                 // Préparation.
                 var includes = new List<string>();
-                CategoryRequestDto requestDto = new()
+                ElementRequestDto requestDto = new()
                 {
-                    ProductId = 1,
-                    IsSpecifiedProductId = true
+                    IsFavorite = false,
+                    IsSpecifiedIsFavorite = true
                 };
 
                 // Exécution.
-                IEnumerable<Category> entities = _CategoryDataAccess.ExecuteMethod(() => _CategoryDataAccess.GetEntities(requestDto, includes, false));
+                IEnumerable<Element> entities = _elementDataAccess.ExecuteMethod(() => _elementDataAccess.GetEntities(requestDto, includes, false));
 
                 // Assert.
                 Assert.IsNotNull(entities);
@@ -121,19 +123,19 @@ namespace DataAccessLayer.Test
             try
             {
                 // Préparation.
-                IList<Category> entities = new List<Category>();
-                Category entity1 = new("Catégorie 1");
+                IList<Element> entities = new List<Element>();
+                Element entity1 = new(0, "Tâche 1");
                 entity1.State = EntityState.Added;
                 entities.Add(entity1);
-                Category entity2 = new("Catégorie 2");
+                Element entity2 = new(0, "Tâche 2");
                 entity2.State = EntityState.Added;
                 entities.Add(entity2);
-                Category entity3 = new("Catégorie 3");
+                Element entity3 = new(0, "Tâche 3");
                 entity3.State = EntityState.Added;
                 entities.Add(entity3);
 
                 // Exécution.
-                entities = _CategoryDataAccess.ExecuteMethod(() => _CategoryDataAccess.Save(entities, new CategoryExecuteDto())).ToList();
+                entities = _elementDataAccess.ExecuteMethod(() => _elementDataAccess.Save(entities, new ElementExecuteDto())).ToList();
 
                 // Assert.
                 Assert.IsNotNull(entities);
@@ -148,22 +150,22 @@ namespace DataAccessLayer.Test
         /// <summary>
         /// Voir <see cref="IBaseDataAccess{T, R, E}.Create"/>.
         /// </summary>
-        [DataRow("Catégorie 1")]
-        [DataRow("Catégorie 2")]
-        [DataRow("Catégorie 3")]
-        [DataRow("Catégorie 4")]
-        [DataRow("Catégorie 5")]
-        [DataRow("Catégorie 6")]
+        [DataRow("Tâche 1", "Description", "01/01/2022", 3, false, false, false)]
+        [DataRow("Tâche 2", "Description", "01/02/2022", 75, false, false, true)]
+        [DataRow("Tâche 3", "Description", "01/03/2022", 100, true, false, true)]
+        [DataRow("Tâche 4", "Description", "01/04/2022", 0, false, true, false)]
+        [DataRow("Tâche 5", "Description", "01/05/2022", 0, true, false, false)]
+        [DataRow("Tâche 6", "Description", "01/06/2022", 30, true, false, false)]
         [DataTestMethod]
-        public void Create(string name)
+        public void Create(string name, string description, string dueDate, int resolutionPercent, bool isReminder, bool isFavorite, bool isClosed)
         {
             try
             {
                 // Préparation.
-                Category entity = new(name);
+                Element entity = new(0, name, description, DateTime.Parse(dueDate), resolutionPercent, isReminder, isFavorite, isClosed);
 
                 // Exécution.
-                entity = _CategoryDataAccess.ExecuteMethod(() => _CategoryDataAccess.Create(entity, new CategoryExecuteDto()));
+                entity = _elementDataAccess.ExecuteMethod(() => _elementDataAccess.Create(entity, new ElementExecuteDto()));
 
                 // Assert.
                 Assert.IsNotNull(entity);
@@ -178,7 +180,7 @@ namespace DataAccessLayer.Test
         /// Voir <see cref="IBaseDataAccess{T, R, E}.Update(T, E)"/>.
         /// </summary>
         [TestMethod]
-        public void Update()
+        public void UpdateEntity()
         {
             try
             {
@@ -186,10 +188,10 @@ namespace DataAccessLayer.Test
                 // Création.
 
                 // Préparation.
-                Category entity = new("à modifier");
+                Element entity = new(0, "à modifier", string.Empty, null, 0, false, false, false);
 
                 // Exécution.
-                entity = _CategoryDataAccess.ExecuteMethod(() => _CategoryDataAccess.Create(entity, new CategoryExecuteDto()));
+                entity = _elementDataAccess.ExecuteMethod(() => _elementDataAccess.Create(entity, new ElementExecuteDto()));
 
                 // Assert.
                 Assert.IsNotNull(entity);
@@ -198,15 +200,15 @@ namespace DataAccessLayer.Test
                 // Modification.
 
                 // Préparation.
-                var name = "new catégorie";
-                entity.Name = name;
+                var description = "new description";
+                entity.Description = description;
 
                 // Exécution.
-                entity = _CategoryDataAccess.ExecuteMethod(() => _CategoryDataAccess.Update(entity, new CategoryExecuteDto()));
+                entity = _elementDataAccess.ExecuteMethod(() => _elementDataAccess.Update(entity, new ElementExecuteDto()));
 
                 // Assert.
                 Assert.IsNotNull(entity);
-                Assert.AreEqual(entity.Name, name);
+                Assert.AreEqual(entity.Description, description);
             }
             catch (TechnicalException ex)
             {
@@ -218,7 +220,7 @@ namespace DataAccessLayer.Test
         /// Voir <see cref="IBaseDataAccess{T, R, E}.Delete"/>.
         /// </summary>
         [TestMethod]
-        public void Delete()
+        public void DeleteEntity()
         {
             try
             {
@@ -226,10 +228,10 @@ namespace DataAccessLayer.Test
                 // Création.
 
                 // Préparation.
-                Category entity = new("à supprimer");
+                Element entity = new(0, "à supprimer", string.Empty, null, 0, false, false, false);
 
                 // Exécution.
-                entity = _CategoryDataAccess.ExecuteMethod(() => _CategoryDataAccess.Create(entity, new CategoryExecuteDto()));
+                entity = _elementDataAccess.ExecuteMethod(() => _elementDataAccess.Create(entity, new ElementExecuteDto()));
 
                 // Assert.
                 Assert.IsNotNull(entity);
@@ -239,13 +241,13 @@ namespace DataAccessLayer.Test
                 var id = entity.Id;
 
                 // Exécution.
-                _CategoryDataAccess.ExecuteMethod(() => _CategoryDataAccess.Delete(entity, new CategoryExecuteDto()));
+                _elementDataAccess.ExecuteMethod(() => _elementDataAccess.Delete(entity, new ElementExecuteDto()));
 
                 // ------------------------------
                 // Récupération, pour voir si ça existe encore.
 
                 // Exécution.
-                entity = _CategoryDataAccess.ExecuteMethod(() => _CategoryDataAccess.GetEntity(id, new List<string>(), false));
+                entity = _elementDataAccess.ExecuteMethod(() => _elementDataAccess.GetEntity(id, new List<string>(), false));
 
                 // Assert.
                 Assert.IsNull(entity);

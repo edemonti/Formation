@@ -1,35 +1,35 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media.Imaging;
-using Technical.Enums;
 
 namespace PresentationLayer.Converter
 {
     /// <summary>
-    /// Converter permettant d’afficher une image en fonction de l’état du modèle.
+    /// Converter permettant d’afficher une image en fonction de l’état de l’entité.
     /// </summary>
-    [ValueConversion(typeof(ModelState), typeof(BitmapSource))]
-    public class ModelStateToIconConverter : IValueConverter
+    [ValueConversion(typeof(EntityState), typeof(BitmapSource))]
+    public class EntityStateToIconConverter : IValueConverter
     {
         /// <summary>
-        /// Détermine l’image à afficher en fonction de l’état du modèle.
+        /// Détermine l’image à afficher en fonction de l’état de l’entité.
         /// </summary>
         /// <param name="value">État</param>
         object IValueConverter.Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             string imgPath = string.Empty;
-            if (value is ModelState state)
+            if (value is EntityState state)
             {
                 switch (state)
                 {
-                    case ModelState.Added:
+                    case EntityState.Added:
                         imgPath = @"pack://application:,,,/PresentationLayer;component/Images/add.ico";
                         break;
-                    case ModelState.Modified:
+                    case EntityState.Modified:
                         imgPath = @"pack://application:,,,/PresentationLayer;component/Images/edit.ico";
                         break;
-                    case ModelState.Deleted:
+                    case EntityState.Deleted:
                         imgPath = @"pack://application:,,,/PresentationLayer;component/Images/delete.ico";
                         break;
                     default:

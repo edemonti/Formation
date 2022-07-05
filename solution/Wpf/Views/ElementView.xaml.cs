@@ -3,11 +3,11 @@
 namespace Wpf.Views
 {
     /// <summary>
-    /// Logique d'interaction pour TaskView.xaml
+    /// Logique d'interaction pour ElementView.xaml
     /// </summary>
-    public partial class TaskView : Page
+    public partial class ElementView : Page
     {
-        public TaskView()
+        public ElementView()
         {
             InitializeComponent();
         }

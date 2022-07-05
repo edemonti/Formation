@@ -7,7 +7,7 @@ namespace EntityFrameworkLayer.Entities
     /// <summary>
     /// Entité Élément.
     /// </summary>
-    public partial class Element : BaseEntity//, IEquatable<Element>, ICloneable
+    public partial class Element : BaseEntity, IEquatable<Element>//, ICloneable
     {
         #region Private Fields
 
@@ -161,19 +161,19 @@ namespace EntityFrameworkLayer.Entities
 
         #endregion
 
-        //#region IEquatable
-        //
-        //bool IEquatable<Element>.Equals(Element other)
-        //{
-        //    return other is Element Element && Equals(Element);
-        //}
-        //
-        //public bool Equals(Element other)
-        //{
-        //    return Id.Equals(other.Id);
-        //}
-        //
-        //#endregion
+        #region IEquatable
+        
+        bool IEquatable<Element>.Equals(Element other)
+        {
+            return other is Element Element && Equals(Element);
+        }
+        
+        public bool Equals(Element other)
+        {
+            return Id.Equals(other.Id);
+        }
+        
+        #endregion
         //
         //#region ICloneable
         //

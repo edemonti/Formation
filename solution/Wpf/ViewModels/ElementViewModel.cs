@@ -12,6 +12,7 @@ using Technical.Commands;
 using Technical.Enums;
 using Technical.Exceptions;
 using Technical.ViewModels;
+using EntityFrameworkLayer.Context;
 
 namespace Wpf.ViewModels
 {
@@ -93,9 +94,9 @@ namespace Wpf.ViewModels
         #region Constructors
 
         public ElementViewModel()
-            : base()
+            : base("DefaultConnectionString")
         {
-            _elementBusinessLogical = new ElementBusinessLogical(new Connection("PCManuConnection"));
+            _elementBusinessLogical = new ElementBusinessLogical(base.Context);
 
             Elements = new ObservableCollection<Element>();
 
