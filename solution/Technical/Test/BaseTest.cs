@@ -1,5 +1,6 @@
 ﻿using EntityFrameworkLayer.Context;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Technical.Test
 {
@@ -8,6 +9,11 @@ namespace Technical.Test
     /// </summary>
     public class BaseTest
     {
+        #region Private Fields
+
+        private static TestContext _testContext;
+
+        #endregion
 
         #region Protected Fields
 
@@ -15,6 +21,15 @@ namespace Technical.Test
         /// Voir <see cref="MyFormationContext"/>.
         /// </summary>
         protected MyFormationContext Context;
+
+        /// <summary>
+        /// Contexte utilisé pour accéder aux fichiers xml de test.
+        /// </summary>
+        protected TestContext TestContext
+        {
+            get { return _testContext; }
+            set { _testContext = value; }
+        }
 
         #endregion
 
@@ -31,6 +46,42 @@ namespace Technical.Test
         }
 
         #endregion
+
+        #region Initialization
+
+        /// <summary>
+        /// Initialisation de la classe de test.
+        /// (appelée une fois avant le lancement de tous les tests)
+        /// Permet le lancement de ReSO en arrière plan.
+        /// </summary>
+        protected static void BaseClassInitialize(TestContext testContext)
+        {
+            _testContext = testContext;
+        }
+
+        /// <summary>
+        /// Initialisation de la méthode de test.
+        /// (appelé lors du lancement de chaque test)
+        /// </summary>
+        protected void BaseTestInitialize()
+        {
+            System.Diagnostics.Debug.Print($"Exécution du test {TestContext.TestName}");
+        }
+
+        #endregion
+
+        #region Finalisation
+
+        /// <summary>
+        /// Finalisation des tests.
+        /// (appelée une fois à la fin de l’exécution de l’ensemble des tests)
+        /// </summary>
+        protected static void BaseClassCleanup()
+        {
+        }
+
+        #endregion
+
 
     }
 }

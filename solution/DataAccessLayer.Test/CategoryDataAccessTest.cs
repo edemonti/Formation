@@ -17,6 +17,21 @@ namespace DataAccessLayer.Test
     [TestClass]
     public class CategoryDataAccessTest : BaseTest
     {
+
+        #region Constants
+
+        /// <summary>
+        /// Fichier de données à tester.
+        /// </summary>
+        private const string TESTDATA_FILENAME = "test_category.json";
+
+        /// <summary>
+        /// Chemin du fichier de données à tester.
+        /// </summary>
+        protected const string TESTDATA_FILEPATH = @"Resources\test_category.json";
+
+        #endregion
+
         #region Private Fields
 
         /// <summary>
@@ -35,6 +50,32 @@ namespace DataAccessLayer.Test
             : base("DefaultConnectionString")
         {
             _CategoryDataAccess = new CategoryDataAccess(base.Context);
+        }
+
+        #endregion
+
+        #region Initialisation
+
+        /// <summary>
+        /// Voir <see cref="BaseClassInitialize"/>.
+        /// </summary>
+        [ClassInitialize]
+        public static void ClassInitialize(TestContext testContext)
+        {
+            BaseClassInitialize(testContext);
+        }
+
+        #endregion
+
+        #region Finalisation
+
+        /// <summary>
+        /// Voir <see cref="BaseClassCleanup"/>.
+        /// </summary>
+        [ClassCleanup]
+        public static void ClassCleanup()
+        {
+            BaseClassCleanup();
         }
 
         #endregion
@@ -149,19 +190,15 @@ namespace DataAccessLayer.Test
         /// <summary>
         /// Voir <see cref="IBaseDataAccess{T, R, E}.Create"/>.
         /// </summary>
-        [DataRow("Catégorie 1")]
-        [DataRow("Catégorie 2")]
-        [DataRow("Catégorie 3")]
-        [DataRow("Catégorie 4")]
-        [DataRow("Catégorie 5")]
-        [DataRow("Catégorie 6")]
-        [DataTestMethod]
-        public void Create(string name)
+        [TestMethod()]
+        [DeploymentItem(TESTDATA_FILEPATH)]
+        [JsonDataSource(TESTDATA_FILENAME)]
+        public void Create(JsonTestData testData)
         {
             try
             {
                 // Préparation.
-                Category entity = new(name);
+                Category entity = new(testData.Parameters.Where(w => w.Name == "name").Select(s => s.Value).FirstOrDefault());
 
                 // Exécution.
                 entity = _CategoryDataAccess.ExecuteMethod(() => _CategoryDataAccess.Create(entity, new CategoryExecuteDto()));

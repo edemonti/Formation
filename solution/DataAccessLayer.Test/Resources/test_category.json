@@ -1,0 +1,49 @@
+{
+  "tests": [
+    {
+      "testName": "Create",
+      "parameters": [
+        {
+          "name": "name",
+          "value": "Catégorie 1"
+        }
+      ]
+    },
+    {
+      "testName": "Create",
+      "parameters": [
+        {
+          "name": "name",
+          "value": "Catégorie 2"
+        }
+      ]
+    },
+    {
+      "testName": "Create",
+      "parameters": [
+        {
+          "name": "name",
+          "value": "Catégorie 3"
+        }
+      ]
+    },
+    {
+      "testName": "Create",
+      "parameters": [
+        {
+          "name": "name",
+          "value": "Catégorie 4"
+        }
+      ]
+    },
+    {
+      "testName": "Create",
+      "parameters": [
+        {
+          "name": "name",
+          "value": "Catégorie 5"
+        }
+      ]
+    }
+  ]
+}
