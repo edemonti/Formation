@@ -18,7 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="BusinessObjects\ElementBusinessObject.cs" />
     <Compile Remove="UserControls\BaseUC.cs" />
     <Compile Remove="Views\Save.xaml.cs" />
     <Compile Remove="Views\ElementCntView.xaml.cs" />
@@ -45,10 +44,6 @@
     <None Update="appsettings.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="BusinessObjects\" />
   </ItemGroup>
 
 </Project>
