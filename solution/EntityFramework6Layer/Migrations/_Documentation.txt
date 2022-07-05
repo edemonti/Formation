@@ -1,7 +1,0 @@
-﻿PM> Enable-Migrations
-PM> Add-Migration 1
-PM> Update-Database
-
-
-deti289741!
-uiqsdoihf2564!
