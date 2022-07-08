@@ -2,8 +2,11 @@
 
 > Ouvrir la console du gestionnaire de package
 > Sélectionner le projet par défaut (Projet Entity)
+
+> Enable-Migrations (pour EF6)
 > Add-Migration Initial
 > Update-Database
+
 
 
 If you have used Entity Framework in the past, you will probably have heard about the Code First approach.
