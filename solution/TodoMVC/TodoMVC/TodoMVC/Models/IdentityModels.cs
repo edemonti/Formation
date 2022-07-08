@@ -24,6 +24,8 @@ namespace TodoMVC.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+        
+        public DbSet<Todo> Todos { get; set; }
 
         public static ApplicationDbContext Create()
         {
