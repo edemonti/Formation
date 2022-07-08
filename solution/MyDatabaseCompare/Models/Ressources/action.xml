@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<actions autoincrement="2">
+  <action id="1" idActionDetail1="1" idActionDetail2="2" isActionEnabled="true" />
+  <action id="2" idActionDetail1="3" idActionDetail2="4" isActionEnabled="false" />
+</actions>

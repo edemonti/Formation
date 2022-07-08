@@ -1,0 +1,39 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:PresentationLayer.Wpf.Ressources">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Colors.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="{x:Type TextBox}">
+        <Setter Property="FontFamily" Value="Tahoma" />
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="Height" Value="20" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Background" Value="{StaticResource BleuClair10}" />
+        <Style.Triggers>
+            <Trigger Property="IsFocused" Value="True">
+                <Setter Property="Background" Value="{StaticResource Rose10}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="BorderTextBoxTop" TargetType="{x:Type Border}">
+        <Setter Property="BorderThickness" Value="1 1 0 0" />
+        <Setter Property="CornerRadius" Value="3" />
+        <Setter Property="Margin" Value="3" />
+        <Setter Property="BorderBrush" Value="{StaticResource Bleu}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+
+    </Style>
+    <Style x:Key="BorderTextBoxBottom" TargetType="{x:Type Border}">
+        <Setter Property="BorderThickness" Value="0 0 1 1" />
+        <Setter Property="CornerRadius" Value="3" />
+        <Setter Property="BorderBrush" Value="{StaticResource Bleu20}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+    </Style>
+
+</ResourceDictionary>

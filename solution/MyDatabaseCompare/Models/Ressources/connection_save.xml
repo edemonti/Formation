@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xml>
+  <connections>
+    <!-- CLEAR -->
+    <connection name="clear_ods_dev">
+      <database>PostgreSql</database>
+      <string>Server=sbd-dev-pg-11;Port=5432;User Id=bi_dev_clear_ods;Password=6Ncv08DeR10FAyeKI8pr;Database=bidevclear</string>
+    </connection>
+    <connection name="clear_ods_rec">
+      <database>PostgreSql</database>
+      <string>Server=sbd-dev-pg-11;Port=5432;User Id=bi_rec_clear_ods;Password=GIzrSnnunh5YbuDUbjYy;Database=birecclear;</string>
+    </connection>
+    <connection name="clear_ods_pprd">
+      <database>PostgreSql</database>
+      <string>Server=sbd-prd-pg;Port=5432;User Id=bi_ppr_clear_ods;Password=r5Iris5UOuSE0xKwMYD1;Database=bipprclear;</string>
+    </connection>
+    <connection name="clear_ods_prd">
+      <database>PostgreSql</database>
+      <string>Server=sbd-prd-pg;Port=5432;User Id=bi_prd_clear_ods;Password=paHYJQXxLlECKz3BFG3C;Database=biprdclear;</string>
+    </connection>
+    <connection name="clear_dwh_dev">
+      <database>PostgreSql</database>
+      <string>server=sbd-dev-pg-11;port=5432;user id=bi_dev_clear_dwh_rw;password=1bGJJd2D6px9H164zfgq;database=bidevclear</string>
+      <!-- <string>Server=sbd-dev-pg-11;Port=5432;User Id=bi_dev_clear_dwh_ro;Password=CqDwyXU9tij9DT97PrlD;Database=bidevclear</string> -->
+    </connection>
+    <connection name="clear_dwh_rec">
+      <database>PostgreSql</database>
+      <string>Server=sbd-dev-pg-11;Port=5432;User Id=bi_rec_clear_dwh_rw;Password=DtevJESwlOi0BNGbESpx;Database=birecclear;</string>
+      <!-- <string>Server=sbd-dev-pg-11;Port=5432;User Id=bi_rec_clear_dwh_ro;Password=kbBIOuelb3boFMFtOFXo;Database=birecclear;</string> -->
+    </connection>
+    <connection name="clear_dwh_prd">
+      <database>PostgreSql</database>
+      <string>Server=sbd-prd-pg;Port=5432;User Id=bi_prd_clear_dwh_ro;Password=3oQIsNzdSynsgqUdaxCT;Database=biprdclear;</string>
+    </connection>
+
+    <!-- DSN -->
+    <connection name="dsn_ods_verl_dev">
+      <database>PostgreSql</database>
+      <string>Server=sbd-dev-pg-11;Port=5432;User Id=bi_dev_verl_ods_rw;Password=dezikhfawnhaycxg8;Database=bidevadpv2;</string>
+    </connection>
+    <connection name="dsn_ods_verl_rec">
+      <database>PostgreSql</database>
+      <string>Server=sbd-dev-pg-11;Port=5432;User Id=bi_rec_verl_ods_rw;Password=saah1khmsznl31bvz;Database=birecadpv2;</string>
+    </connection>
+
+    <!--<connection name="atlas_jvq000_dev">
+      <database>Oracle</database>
+      <string>Provider=MSDAORA.1;Data Source=IDEVATLM;User Id=JVQ000;Password=JVQ000;</string>
+    </connection>-->
+
+  </connections>
+</xml>

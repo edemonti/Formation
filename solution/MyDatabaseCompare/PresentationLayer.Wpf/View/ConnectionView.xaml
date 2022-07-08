@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="PresentationLayer.Wpf.View.ConnectionView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:trad="clr-namespace:PresentationLayer.Wpf.Ressources"
+        mc:Ignorable="d" Height="500" Width="800">
+
+    <Grid Style="{StaticResource GridMaster}" >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Style="{StaticResource StackPanelHeader}">
+            <Label Style="{StaticResource LabelTitle}" Content="{x:Static trad:Connection.ConnectionTitle}" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Style="{StaticResource StackPanelBody}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Label Grid.Column="0" Grid.Row="0" Content="{x:Static trad:Connection.Id}" />
+
+                <Border Grid.Column="1" Grid.Row="0" Style="{StaticResource BorderTextBoxTop}">
+                    <Border Style="{StaticResource BorderTextBoxBottom}">
+                        <TextBox IsReadOnly="True" Text="{Binding Path=ConnectionBO.Id, UpdateSourceTrigger=PropertyChanged}" />
+                    </Border>
+                </Border>
+
+                <Label Grid.Column="0" Grid.Row="1" Content="{x:Static trad:Connection.Name}" />
+                <Border Grid.Column="1" Grid.Row="1" Style="{StaticResource BorderTextBoxTop}">
+                    <Border Style="{StaticResource BorderTextBoxBottom}">
+                        <TextBox Text="{Binding Path=ConnectionBO.Name, UpdateSourceTrigger=PropertyChanged}" />
+                    </Border>
+                </Border>
+
+                <Label Grid.Column="0" Grid.Row="2" Content="{x:Static trad:Connection.Provider}" />
+                <Border Grid.Column="1" Grid.Row="2" Style="{StaticResource BorderTextBoxTop}">
+                    <Border Style="{StaticResource BorderTextBoxBottom}">
+                        <TextBox Text="{Binding Path=ConnectionBO.Provider, UpdateSourceTrigger=PropertyChanged}" />
+                    </Border>
+                </Border>
+                <Label Grid.Column="0" Grid.Row="3" Content="{x:Static trad:Connection.IsProviderImplemented}" />
+                <Border Grid.Column="1" Grid.Row="3" Style="{StaticResource BorderCheckBoxTop}">
+                    <Border Style="{StaticResource BorderCheckBoxBottom}">
+                        <CheckBox Grid.Column="1" Grid.Row="3"  IsChecked="{Binding Path=ConnectionBO.IsProviderImplemented, UpdateSourceTrigger=PropertyChanged}"></CheckBox>
+                    </Border>
+                </Border>
+
+                <Label Grid.Column="0" Grid.Row="4" Content="{x:Static trad:Connection.ConnectionString}" />
+                <Border  Grid.Column="1" Grid.Row="4" Style="{StaticResource BorderTextBoxTop}">
+                    <Border Style="{StaticResource BorderTextBoxBottom}">
+                        <TextBox Text="{Binding Path=ConnectionBO.ConnectionString, UpdateSourceTrigger=PropertyChanged}" />
+                    </Border>
+                </Border>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Style="{StaticResource StackPanelFooter}">
+            <Border Style="{StaticResource BorderFooter}">
+                <Grid>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                        <Button Content="Fermer" Command="{Binding ExitCommand}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" Style="{StaticResource buttonStyleCancel}" />
+                        <Button Content="Annuler" Command="{Binding CancelCommand}" Style="{StaticResource buttonStyleCancel}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button Content="Enregistrer" Command="{Binding SaveCommand}" Style="{StaticResource buttonStyleAction}" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

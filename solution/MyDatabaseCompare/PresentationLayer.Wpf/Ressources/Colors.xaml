@@ -1,0 +1,128 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:PresentationLayer.Wpf.Ressources">
+    
+    <!--Bleu Verlingue-->
+    <SolidColorBrush x:Key="Bleu">
+        <SolidColorBrush.Color>
+            <Color A="255" R="0" G="55" B="139 "/>
+        </SolidColorBrush.Color>
+    </SolidColorBrush>
+    <SolidColorBrush x:Key="Bleu50">
+        <SolidColorBrush.Color>
+            <Color A="128" R="0" G="55" B="139 "/>
+        </SolidColorBrush.Color>
+    </SolidColorBrush>
+    <SolidColorBrush x:Key="Bleu40">
+        <SolidColorBrush.Color>
+            <Color A="100" R="0" G="55" B="139 "/>
+        </SolidColorBrush.Color>
+    </SolidColorBrush>
+    <SolidColorBrush x:Key="Bleu30">
+        <SolidColorBrush.Color>
+            <Color A="75" R="0" G="55" B="139 "/>
+        </SolidColorBrush.Color>
+    </SolidColorBrush>
+    <SolidColorBrush x:Key="Bleu20">
+        <SolidColorBrush.Color>
+            <Color A="50" R="0" G="55" B="139 "/>
+        </SolidColorBrush.Color>
+    </SolidColorBrush>
+    <SolidColorBrush x:Key="Bleu10">
+        <SolidColorBrush.Color>
+            <Color A="25" R="0" G="55" B="139 "/>
+        </SolidColorBrush.Color>
+    </SolidColorBrush>
+
+    <!--Bleu clair Verlingue-->
+    <SolidColorBrush x:Key="BleuClair">
+        <SolidColorBrush.Color>
+            <Color A="255" R="77" G="185" B="223"/>
+        </SolidColorBrush.Color>
+    </SolidColorBrush>
+    <SolidColorBrush x:Key="BleuClair50">
+        <SolidColorBrush.Color>
+            <Color A="128" R="77" G="185" B="223"/>
+        </SolidColorBrush.Color>
+    </SolidColorBrush>
+    <SolidColorBrush x:Key="BleuClair40">
+        <SolidColorBrush.Color>
+            <Color A="100" R="77" G="185" B="223"/>
+        </SolidColorBrush.Color>
+    </SolidColorBrush>
+    <SolidColorBrush x:Key="BleuClair30">
+        <SolidColorBrush.Color>
+            <Color A="75" R="77" G="185" B="223"/>
+        </SolidColorBrush.Color>
+    </SolidColorBrush>
+    <SolidColorBrush x:Key="BleuClair20">
+        <SolidColorBrush.Color>
+            <Color A="50" R="77" G="185" B="223"/>
+        </SolidColorBrush.Color>
+    </SolidColorBrush>
+    <SolidColorBrush x:Key="BleuClair10">
+        <SolidColorBrush.Color>
+            <Color A="25" R="77" G="185" B="223"/>
+        </SolidColorBrush.Color>
+    </SolidColorBrush>
+
+    <!--Rose Verlingue-->
+    <SolidColorBrush x:Key="Rose">
+        <SolidColorBrush.Color>
+            <Color A="255" R="208" G="66" B="123"/>
+        </SolidColorBrush.Color>
+    </SolidColorBrush>
+    <SolidColorBrush x:Key="Rose50">
+        <SolidColorBrush.Color>
+            <Color A="128" R="208" G="66" B="123"/>
+        </SolidColorBrush.Color>
+    </SolidColorBrush>
+    <SolidColorBrush x:Key="Rose40">
+        <SolidColorBrush.Color>
+            <Color A="100" R="208" G="66" B="123"/>
+        </SolidColorBrush.Color>
+    </SolidColorBrush>
+    <SolidColorBrush x:Key="Rose30">
+        <SolidColorBrush.Color>
+            <Color A="75" R="208" G="66" B="123"/>
+        </SolidColorBrush.Color>
+    </SolidColorBrush>
+    <SolidColorBrush x:Key="Rose20">
+        <SolidColorBrush.Color>
+            <Color A="50" R="208" G="66" B="123"/>
+        </SolidColorBrush.Color>
+    </SolidColorBrush>
+    <SolidColorBrush x:Key="Rose10">
+        <SolidColorBrush.Color>
+            <Color A="25" R="208" G="66" B="123"/>
+        </SolidColorBrush.Color>
+    </SolidColorBrush>
+
+    <!--Gris Verlingue-->
+    <SolidColorBrush x:Key="Gris">
+        <SolidColorBrush.Color>
+            <Color A="255" R="73" G="83" B="89"/>
+        </SolidColorBrush.Color>
+    </SolidColorBrush>
+    <SolidColorBrush x:Key="Gris80">
+        <SolidColorBrush.Color>
+            <Color A="200" R="73" G="83" B="89"/>
+        </SolidColorBrush.Color>
+    </SolidColorBrush>
+    <SolidColorBrush x:Key="Gris70">
+        <SolidColorBrush.Color>
+            <Color A="175" R="73" G="83" B="89"/>
+        </SolidColorBrush.Color>
+    </SolidColorBrush>
+    <SolidColorBrush x:Key="Gris50">
+        <SolidColorBrush.Color>
+            <Color A="128" R="73" G="83" B="89"/>
+        </SolidColorBrush.Color>
+    </SolidColorBrush>
+    <SolidColorBrush x:Key="Gris10">
+        <SolidColorBrush.Color>
+            <Color A="25" R="73" G="83" B="89"/>
+        </SolidColorBrush.Color>
+    </SolidColorBrush>
+    
+</ResourceDictionary>

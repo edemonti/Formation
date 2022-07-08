@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="PresentationLayer.Wpf.View.ConnectionListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:PresentationLayer.Wpf.View"
+             xmlns:trad="clr-namespace:PresentationLayer.Wpf.Ressources"
+             xmlns:viewmodel="clr-namespace:PresentationLayer.Wpf.ViewModel"
+             mc:Ignorable="d" Height="500" Width="800">
+    <UserControl.Resources>
+        <viewmodel:ConnectionListViewModel x:Key="vm" />
+    </UserControl.Resources>
+
+    <Grid DataContext="{Binding Source={StaticResource vm}}" Style="{StaticResource GridMaster}" >
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Style="{StaticResource StackPanelHeader}">
+            <Label Style="{StaticResource LabelTitle}" Content="{x:Static trad:Connection.ConnectionListTitle}" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Style="{StaticResource StackPanelBody}">
+            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Path=ConnectionBOList}" SelectedItem="{Binding Path=ConnectionBOSelected, Mode=TwoWay}"
+                      RowHeaderWidth="0" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="{x:Static trad:Connection.Id}" Binding="{Binding Id}" />
+                    <DataGridTextColumn Header="{x:Static trad:Connection.Name}" Binding="{Binding Name}" />
+                    <DataGridTextColumn Header="{x:Static trad:Connection.Provider}" Binding="{Binding Provider}" />
+                    <DataGridTextColumn Header="{x:Static trad:Connection.IsProviderImplemented}" Binding="{Binding IsProviderImplemented}" />
+                    <DataGridTextColumn Header="{x:Static trad:Connection.ConnectionString}" Binding="{Binding ConnectionString}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Style="{StaticResource StackPanelFooter}">
+            <Border Style="{StaticResource BorderFooter}">
+                <Grid>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button Content="{x:Static trad:Connection.ButtonAdd}" Command="{Binding AddCommand}" Style="{StaticResource buttonStyleAction}" />
+                        <Button Content="{x:Static trad:Connection.ButtonUpdate}" Command="{Binding UpdateCommand}" Style="{StaticResource buttonStyleAction}" />
+                        <Button Content="{x:Static trad:Connection.ButtonDelete}" Command="{Binding DeleteCommand}" Style="{StaticResource buttonStyleAction}" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

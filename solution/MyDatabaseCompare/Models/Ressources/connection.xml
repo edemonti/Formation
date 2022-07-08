@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<connections autoincrement="7">
+  <connection id="1" name="clear_ods_dev" provider="PostgreSql" isProviderImplemented="true" connectionString="Server=sbd-dev-pg-11;Port=5432;User Id=bi_dev_clear_ods;Password=6Ncv08DeR10FAyeKI8pr;Database=bidevclear" />
+  <connection id="2" name="clear_ods_rec" provider="PostgreSql" isProviderImplemented="true" connectionString="Server=sbd-dev-pg-11;Port=5432;User Id=bi_rec_clear_ods;Password=GIzrSnnunh5YbuDUbjYy;Database=birecclear" />
+  <connection id="3" name="clear_dwh_dev" provider="PostgreSql" isProviderImplemented="true" connectionString="server=sbd-dev-pg-11;port=5432;user id=bi_dev_clear_dwh_rw;password=1bGJJd2D6px9H164zfgq;database=bidevclear" />
+  <connection id="4" name="clear_dwh_rec" provider="PostgreSql" isProviderImplemented="true" connectionString="Server=sbd-dev-pg-11;Port=5432;User Id=bi_rec_clear_dwh_rw;Password=DtevJESwlOi0BNGbESpx;Database=birecclear" />
+  <connection id="5" name="dsn_ods_verl_dev" provider="PostgreSql" isProviderImplemented="true" connectionString="Server=sbd-dev-pg-11;Port=5432;User Id=bi_dev_verl_ods_rw;Password=dezikhfawnhaycxg8;Database=bidevadpv2" />
+  <connection id="6" name="dsn_ods_verl_rec" provider="PostgreSql" isProviderImplemented="true" connectionString="Server=sbd-dev-pg-11;Port=5432;User Id=bi_rec_verl_ods_rw;Password=saah1khmsznl31bvz;Database=birecadpv2" />
+  <connection id="7" name="TEST" provider="TEST" isProviderImplemented="false" connectionString="TEst" />
+</connections>

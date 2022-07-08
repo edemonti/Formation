@@ -1,0 +1,43 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:PresentationLayer.Wpf.Ressources">
+
+    <!-- Grille générale -->
+    <Style x:Key="GridMaster" TargetType="{x:Type Grid}">
+        <Setter Property="Height" Value="500" />
+        <Setter Property="Width" Value="800" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Background" Value="White"></Setter>
+    </Style>
+
+    <!-- En-tête -->
+    <Style x:Key="StackPanelHeader" TargetType="{x:Type StackPanel}">
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="Background" Value="{StaticResource BleuClair20}"></Setter>
+    </Style>
+    
+
+    <!-- Corps -->
+    <Style x:Key="StackPanelBody" TargetType="{x:Type StackPanel}">
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="40"/>
+    </Style>
+
+    <!-- Pied de page -->
+    <Style x:Key="StackPanelFooter" TargetType="{x:Type StackPanel}">
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="Orientation" Value="Vertical" />
+        <Setter Property="Background" Value="{StaticResource BleuClair20}"></Setter>
+    </Style>
+
+    <Style x:Key="BorderFooter" TargetType="{x:Type Border}">
+        <Setter Property="BorderBrush" Value="{StaticResource BleuClair}"/>
+        <Setter Property="BorderThickness" Value="0 1"/>
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+    </Style>
+
+</ResourceDictionary>

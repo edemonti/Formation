@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<actionDetails autoincrement="4">
+  <actionDetail id="1" idAction="1" idConnection="1" idQuery="1" where="where 1=1" isExportCsvEnabled="true" isExportXmlEnabled="false" />
+  <actionDetail id="2" idAction="1" idConnection="2" idQuery="1" where="where 1=1" isExportCsvEnabled="true" isExportXmlEnabled="false" />
+  <actionDetail id="3" idAction="2" idConnection="1" idQuery="2" where="" isExportCsvEnabled="true" isExportXmlEnabled="false" />
+  <actionDetail id="4" idAction="2" idConnection="2" idQuery="2" where="" isExportCsvEnabled="true" isExportXmlEnabled="false" />
+</actionDetails>
