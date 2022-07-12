@@ -1,0 +1,2 @@
+﻿Installation Ajax pour refresh vue patielle :
+PM> Install-Package Microsoft.jQuery.Unobtrusive.Ajax

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
@@ -14,10 +15,21 @@ namespace TodoMVC.Controllers
         // GET: Todoes
         public ActionResult Index()
         {
+            return View();
+        }
+
+
+        private IEnumerable<Todo> GetTodoes()
+        {
             string currentUserId = User.Identity.GetUserId();
             ApplicationUser currentUser = db.Users.FirstOrDefault(w => w.Id == currentUserId);
 
-            return View(db.Todos.ToList().Where(w => w.User == currentUser));
+            return db.Todos.ToList().Where(w => w.User == currentUser);
+        }
+
+        public ActionResult BuildTodoTable()
+        {
+            return PartialView("_TodoTable", GetTodoes());
         }
 
         // GET: Todoes/Details/5
@@ -63,6 +75,29 @@ namespace TodoMVC.Controllers
             return View(todo);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AJAXCreate([Bind(Include = "Id,Description")] Todo todo)
+        {
+            if (ModelState.IsValid)
+            {
+                // Récupération de l’utilisateur connecté.
+                string currentUserId = User.Identity.GetUserId();
+                ApplicationUser currentUser = db.Users.FirstOrDefault(w => w.Id == currentUserId);
+
+                // Modification du model.
+                todo.User = currentUser;
+                todo.IsDone = false;
+                db.Todos.Add(todo);
+
+                // Sauvegarde en base de données.
+                db.SaveChanges();
+            }
+
+            return PartialView("_TodoTable", GetTodoes());
+        }
+
+
         // GET: Todoes/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -71,10 +106,20 @@ namespace TodoMVC.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Todo todo = db.Todos.Find(id);
+
             if (todo == null)
             {
                 return HttpNotFound();
             }
+
+            // Récupération de l’utilisateur connecté.
+            string currentUserId = User.Identity.GetUserId();
+            ApplicationUser currentUser = db.Users.FirstOrDefault(w => w.Id == currentUserId);
+
+            // Vérification de l’utilisateur.
+            if(todo.User != currentUser)
+            return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
             return View(todo);
         }
 
@@ -92,6 +137,27 @@ namespace TodoMVC.Controllers
                 return RedirectToAction("Index");
             }
             return View(todo);
+        }
+
+        [HttpPost]
+        public ActionResult AJAXEdit(int? id, bool value)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Todo todo = db.Todos.Find(id);
+            if (todo == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                todo.IsDone = value;
+                db.Entry(todo).State = EntityState.Modified;
+                db.SaveChanges();
+                return PartialView("_TodoTable", GetTodoes());
+            }
         }
 
         // GET: Todoes/Delete/5
