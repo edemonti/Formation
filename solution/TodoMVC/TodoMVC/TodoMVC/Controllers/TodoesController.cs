@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -13,18 +14,22 @@ namespace TodoMVC.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Todoes
+        //[Authorize] // Permet d’afficher la fenêtre de login si aucun user n’est connecté.
         public ActionResult Index()
         {
             return View();
         }
-
 
         private IEnumerable<Todo> GetTodoes()
         {
             string currentUserId = User.Identity.GetUserId();
             ApplicationUser currentUser = db.Users.FirstOrDefault(w => w.Id == currentUserId);
 
-            return db.Todos.ToList().Where(w => w.User == currentUser);
+            var todoes = db.Todos.ToList().Where(w => w.User == currentUser);
+
+            ViewBag.Percent = Math.Round(100f * todoes.Count(w => w.IsDone) / todoes.Count(), 2);
+
+            return todoes;
         }
 
         public ActionResult BuildTodoTable()

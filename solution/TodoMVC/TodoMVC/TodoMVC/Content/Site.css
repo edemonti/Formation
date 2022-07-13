@@ -22,3 +22,9 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/* Style for todo items */
+.completedTodo {
+    text-decoration: line-through;
+    color: #4cff00;
+}
