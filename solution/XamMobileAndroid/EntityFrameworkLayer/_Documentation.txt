@@ -1,5 +1,11 @@
 ﻿https://entityframeworkcore.com/approach-code-first
 
+json       : Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=TodoMVC;Integrated Security=True;
+web.config : Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=TodoMVC;Integrated Security=True;
+
+Serveur : 
+  (localdb)\MSSQLLocalDB
+
 > Ouvrir la console du gestionnaire de package
 > Sélectionner le projet par défaut (Projet Entity)
 
