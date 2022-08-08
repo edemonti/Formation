@@ -8,9 +8,9 @@
     Shell.FlyoutBehavior="Disabled">
     
     <ShellContent
-        Shell.NavBarIsVisible="true"
+        Shell.NavBarIsVisible="False"
         Title="Home"
-        ContentTemplate="{DataTemplate view:LotsPage}"
-        Route="LotsPage" />
+        ContentTemplate="{DataTemplate view:AccueilPage}"
+        Route="AccueilPage" />
 
 </Shell>
