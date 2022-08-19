@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<?xaml-comp compile="true" ?>
+<?xaml-comp compile="false" ?>
 <ResourceDictionary 
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
@@ -382,15 +382,15 @@
     </Style>
 
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
     <!--<Style TargetType="Page" ApplyToDerivedTypes="True">
         <Setter Property="BackgroundColor" Value="{StaticResource LightBackground}" />
     </Style>-->
@@ -443,5 +443,161 @@
         <Setter Property="IsClippedToBounds" Value="True"/>
     </Style>
 
+
+    <Color x:Key="Light">#FFF</Color>
+    <Color x:Key="Light100">#EEE</Color>
+    <Color x:Key="Light200">#DDD</Color>
+    <Color x:Key="Light300">#CCC</Color>
+
+    <Color x:Key="Dark">#000</Color>
+    <Color x:Key="Dark100">#111</Color>
+    <Color x:Key="Dark200">#222</Color>
+    <Color x:Key="Dark300">#333</Color>
+    <Color x:Key="Dark400">#444</Color>
+    <Color x:Key="Dark500">#555</Color>
+    <Color x:Key="Dark600">#666</Color>
+
+
+    <Color x:Key="Primary_100">#456789</Color>
+    <Color x:Key="Primary">#56789A</Color>
+    <Color x:Key="Primary100">#6789AB</Color>
+    <Color x:Key="Primary200">#789ABC</Color>
+    <Color x:Key="Primary300">#89ABCD</Color>
+    
+    <Color x:Key="PrimaryDark">#123456</Color>
+    <Color x:Key="PrimaryDark100">#234567</Color>
+    <Color x:Key="PrimaryDark200">#345678</Color>
+    <Color x:Key="PrimaryDark300">#456789</Color>
+
+    <Color x:Key="Accent">#00BCD4</Color>
+
+    
+    <Style x:Key="ToolbarButton" TargetType="{x:Type Button}">
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+        <Setter Property="TextColor" Value="{StaticResource Light}" />
+        <Setter Property="BorderColor" Value="{StaticResource Light}" />
+        <Setter Property="BorderWidth" Value="1" />
+        <Setter Property="CornerRadius" Value="4" />
+        <Setter Property="Scale" Value="1" />
+        <Setter Property="Shadow">
+            <Shadow
+                    Brush="{StaticResource Dark600}"
+                    Offset="1,1"
+                    Radius="4"
+                    Opacity="1"/>
+        </Setter>
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="{StaticResource Gray300}" />
+                            <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                            <Setter Property="BorderColor" Value="{StaticResource Gray300}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="{StaticResource Light}" />
+                            <Setter Property="BackgroundColor" Value="{StaticResource Primary_100}" />
+                            <Setter Property="BorderColor" Value="{StaticResource Light}" />
+                            <Setter Property="Scale" Value="0.98" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ToolbarFrame" TargetType="{x:Type Frame}">
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+        <Setter Property="BorderColor" Value="{StaticResource Primary}" />
+        <Setter Property="CornerRadius" Value="0" />
+    </Style>
+
+    <Style x:Key="ToolbarGrid" TargetType="{x:Type Grid}">
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="RowSpacing" Value="0" />
+        <Setter Property="ColumnSpacing" Value="5" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+    </Style>
+
+    <Style x:Key="ToolbarLogoFrame" TargetType="{x:Type Frame}">
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+        <Setter Property="VerticalOptions" Value="FillAndExpand" />
+        <Setter Property="BackgroundColor" Value="{StaticResource Accent}" />
+        <Setter Property="BorderColor" Value="{StaticResource Light}" />
+        <Setter Property="CornerRadius" Value="4" />
+        
+    </Style>
+
+    <Style x:Key="ToolbarLogoImage" TargetType="{x:Type Image}">
+        <Setter Property="HeightRequest" Value="32" />
+        <Setter Property="WidthRequest" Value="32" />
+        <Setter Property="Aspect" Value="AspectFill" />
+    </Style>
+
+    <Style x:Key="HeaderFrame" TargetType="{x:Type Frame}">
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="BorderColor" Value="{StaticResource Primary}" />
+        <Setter Property="CornerRadius" Value="0" />
+        <Setter Property="Background">
+            <LinearGradientBrush  StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="{StaticResource Primary}" Offset="0"/>
+                <GradientStop Color="{StaticResource Primary200}" Offset="1"/>
+            </LinearGradientBrush>
+        </Setter>
+    </Style>
+
+    <Style x:Key="HommeButton" TargetType="{x:Type Button}">
+        <Setter Property="WidthRequest" Value="80" />
+        <Setter Property="HeightRequest" Value="80" />
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="ContentLayout" Value="Top" />
+        <Setter Property="FontSize" Value="10" />
+        <Setter Property="TextColor" Value="{StaticResource Dark600}" />
+        <Setter Property="BackgroundColor" Value="{StaticResource Light}" />
+        <Setter Property="Shadow">
+            <Shadow
+                    Brush="{StaticResource Light100}"
+                    Offset="1,1"
+                    Radius="4"
+                    Opacity="0.8"/>
+        </Setter>
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="Disabled">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="{StaticResource Gray300}" />
+                            <Setter Property="BackgroundColor" Value="{StaticResource Light}" />
+                            <Setter Property="BorderColor" Value="{StaticResource Gray300}" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <VisualState.Setters>
+                            <Setter Property="TextColor" Value="{StaticResource Dark600}" />
+                            <Setter Property="BackgroundColor" Value="{StaticResource Light100}" />
+                            <Setter Property="BorderColor" Value="{StaticResource Light}" />
+                            <Setter Property="Scale" Value="0.98" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
 
 </ResourceDictionary>

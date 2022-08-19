@@ -9,8 +9,10 @@
     
     <ShellContent
         Shell.NavBarIsVisible="False"
+        Shell.NavBarHasShadow="True"
+        Shell.BackgroundColor="#3F2097"
         Title="Home"
-        ContentTemplate="{DataTemplate view:AccueilPage}"
-        Route="AccueilPage" />
+        ContentTemplate="{DataTemplate view:ConnexionPage}"
+        Route="ConnexionPage"></ShellContent>
 
 </Shell>

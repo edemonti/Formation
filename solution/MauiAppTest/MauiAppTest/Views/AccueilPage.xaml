@@ -182,7 +182,7 @@
                 Text="Adhérents">
                 <Button.ImageSource>
                     <FontImageSource
-                        Glyph="{x:Static helpers:FontIcon.Autorenew}"
+                        Glyph="{x:Static helpers:FontIcon.Cat}"
                         FontFamily="FontIcon"
                         Size="32"
                         Color="#7C2370"/>
@@ -203,7 +203,7 @@
                 Text="Adhérents">
                 <Button.ImageSource>
                     <FontImageSource
-                        Glyph="{x:Static helpers:FontIcon.Autorenew}"
+                        Glyph="{x:Static helpers:FontIcon.MoonFirstQuarter}"
                         FontFamily="FontIcon"
                         Size="32"
                         Color="#7C2370"/>
@@ -224,7 +224,7 @@
                 Text="Adhérents">
                 <Button.ImageSource>
                     <FontImageSource
-                        Glyph="{x:Static helpers:FontIcon.Autorenew}"
+                        Glyph="{x:Static helpers:FontIcon.Calendar}"
                         FontFamily="FontIcon"
                         Size="32"
                         Color="#7C2370"/>
@@ -245,7 +245,7 @@
                 Text="Adhérents">
                 <Button.ImageSource>
                     <FontImageSource
-                        Glyph="{x:Static helpers:FontIcon.Autorenew}"
+                        Glyph="{x:Static helpers:FontIcon.Horse}"
                         FontFamily="FontIcon"
                         Size="32"
                         Color="#7C2370"/>
@@ -266,7 +266,7 @@
                 Text="Adhérents">
                 <Button.ImageSource>
                     <FontImageSource
-                        Glyph="{x:Static helpers:FontIcon.Autorenew}"
+                        Glyph="{x:Static helpers:FontIcon.Unicorn}"
                         FontFamily="FontIcon"
                         Size="32"
                         Color="#7C2370"/>
@@ -287,7 +287,7 @@
                 Text="Adhérents">
                 <Button.ImageSource>
                     <FontImageSource
-                        Glyph="{x:Static helpers:FontIcon.Autorenew}"
+                        Glyph="{x:Static helpers:FontIcon.TeddyBear}"
                         FontFamily="FontIcon"
                         Size="32"
                         Color="#7C2370"/>
@@ -328,9 +328,9 @@
                VerticalOptions="FillAndExpand"
                HorizontalOptions="FillAndExpand">
             <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Margin="1" BackgroundColor="#EEEEEE">
-                <Rectangle BackgroundColor="#7C2370" WidthRequest="15" HeightRequest="2" Margin="8 25 5 5" />
+                <!--<Rectangle BackgroundColor="#7C2370" WidthRequest="15" HeightRequest="2" Margin="8 25 5 5" />-->
                 <Label Text="by Optavis" VerticalOptions="Center" TextColor="#666666" FontSize="12" />
-                <Rectangle BackgroundColor="#7C2370" WidthRequest="15" HeightRequest="2" Margin="8 5 5 25" />
+                <!--<Rectangle BackgroundColor="#7C2370" WidthRequest="15" HeightRequest="2" Margin="8 5 5 25" />-->
             </HorizontalStackLayout>
 
         </Frame>

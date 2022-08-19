@@ -1,9 +1,234 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helpers="clr-namespace:MauiAppTest.Helpers"
+             xmlns:views="clr-namespace:MauiAppTest.Views"
              x:Class="MauiAppTest.Views.ConnexionPage"
              Title="ConnexionPage">
-    <ScrollView>
+    <!--<Shell.TitleView>
+        <views:ToolbarView CardTitle="Slavko Vlasic" Margin="0" Padding="0" />
+    </Shell.TitleView>-->
+
+    <Grid ColumnDefinitions="*" RowDefinitions="50, 200, *, 25" ColumnSpacing="0" RowSpacing="0" Padding="0" Margin="0" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+        <!--Barre de menu-->
+        <Frame 
+            x:Name="Toolbar"
+            Grid.Row="0"
+            Style="{StaticResource ToolbarFrame}">
+
+            <Grid
+                ColumnDefinitions="60,60,*,60,60"
+                RowDefinitions="40, *"
+                Style="{StaticResource ToolbarGrid}">
+
+
+                <!--Bouton de fermeture de l’application-->
+                <Button 
+                    Grid.Column="0"
+                    Style="{StaticResource ToolbarButton}">
+                    <Button.ImageSource>
+                        <FontImageSource
+                            Glyph="{x:Static helpers:FontIcon.PowerStandby}"
+                            FontFamily="FontIcon"
+                            Color="{Binding Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}}, Path=TextColor}"
+                            Size="32" />
+                    </Button.ImageSource>
+                </Button>
+
+                <!--Bouton de fermeture de retour-->
+                <Button 
+                    Grid.Column="1"
+                    Style="{StaticResource ToolbarButton}">
+                    <Button.ImageSource>
+                        <FontImageSource
+                            Glyph="{x:Static helpers:FontIcon.ArrowLeft}"
+                            FontFamily="FontIcon"
+                            Color="{Binding Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}}, Path=TextColor}"
+                            Size="32" />
+                    </Button.ImageSource>
+                </Button>
+
+                <!--Titre de la page-->
+                <Label                    
+                    Grid.Column="2"
+                    Padding="0"
+                    Margin="0"
+                    Text="Liste des lots"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    TextColor="#FFFFFF"
+                    FontSize="20" />
+
+                <!--Bouton de synchronistion-->
+                <Button
+                    Grid.Column="3"
+                    IsEnabled="False"
+                    Style="{StaticResource ToolbarButton}">
+                    <Button.ImageSource>
+                        <FontImageSource
+                            Glyph="{x:Static helpers:FontIcon.AutorenewOff}"
+                            FontFamily="FontIcon"
+                            Color="{Binding Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type Button}}, Path=TextColor}"
+                            Size="32" />
+                    </Button.ImageSource>
+                </Button>
+
+                <!--Logo-->
+                <Frame
+                    Grid.Column="4"
+                    Style="{StaticResource ToolbarLogoFrame}">
+                    <Image
+                        Source="nodata.png"
+                        Style="{StaticResource ToolbarLogoImage}"/>
+                </Frame>
+            </Grid>
+
+        </Frame>
+
+        <!--En-tête de page-->
+        <Frame x:Name="Header"
+               Grid.Row="1"
+               Style="{StaticResource HeaderFrame}">
+        </Frame>
+
+        <!--Zone de text (opacité)-->
+        <Frame 
+            Grid.Row="1"
+            Grid.ColumnSpan="5"           
+            Margin="50"
+            BorderColor="Transparent"
+            Opacity="0.1"
+            CornerRadius="12"
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand">
+        </Frame>
+
+        <!--Boutons -->
+        <FlexLayout
+            Grid.Row="2"
+            AlignItems="Center"
+            Wrap="Wrap"
+            JustifyContent="SpaceEvenly">
+
+            <Button 
+                Style="{StaticResource HommeButton}"
+                Text="Adhérents">
+                <Button.ImageSource>
+                    <FontImageSource
+                        Glyph="{x:Static helpers:FontIcon.Cat}"
+                        FontFamily="FontIcon"
+                        Size="32"
+                        Color="{StaticResource Primary}"/>
+                </Button.ImageSource>
+            </Button>
+
+            <Button 
+                Style="{StaticResource HommeButton}"
+                Text="Adhérents">
+                <Button.ImageSource>
+                    <FontImageSource
+                        Glyph="{x:Static helpers:FontIcon.MoonFirstQuarter}"
+                        FontFamily="FontIcon"
+                        Size="32"
+                        Color="{StaticResource Primary}"/>
+                </Button.ImageSource>
+            </Button>
+
+            <Button 
+                Style="{StaticResource HommeButton}"
+                Text="Adhérents">
+                <Button.ImageSource>
+                    <FontImageSource
+                        Glyph="{x:Static helpers:FontIcon.Calendar}"
+                        FontFamily="FontIcon"
+                        Size="32"
+                        Color="{StaticResource Primary}"/>
+                </Button.ImageSource>
+            </Button>
+
+            <Button 
+                Style="{StaticResource HommeButton}"
+                Text="Adhérents">
+                <Button.ImageSource>
+                    <FontImageSource
+                        Glyph="{x:Static helpers:FontIcon.Horse}"
+                        FontFamily="FontIcon"
+                        Size="32"
+                        Color="{StaticResource Primary}"/>
+                </Button.ImageSource>
+            </Button>
+
+            <Button 
+                Style="{StaticResource HommeButton}"
+                Text="Adhérents">
+                <Button.ImageSource>
+                    <FontImageSource
+                        Glyph="{x:Static helpers:FontIcon.Unicorn}"
+                        FontFamily="FontIcon"
+                        Size="32"
+                        Color="{StaticResource Primary}"/>
+                </Button.ImageSource>
+            </Button>
+
+            <Button 
+                Style="{StaticResource HommeButton}"
+                Text="Adhérents">
+                <Button.ImageSource>
+                    <FontImageSource
+                        Glyph="{x:Static helpers:FontIcon.TeddyBear}"
+                        FontFamily="FontIcon"
+                        Size="32"
+                        Color="{StaticResource Primary}"/>
+                </Button.ImageSource>
+            </Button>
+
+            <Button 
+                Style="{StaticResource HommeButton}"
+                Text="Adhérents">
+                <Button.ImageSource>
+                    <FontImageSource
+                        Glyph="{x:Static helpers:FontIcon.CurrencyEur}"
+                        FontFamily="FontIcon"
+                        Size="32"
+                        Color="{StaticResource Primary}"/>
+                </Button.ImageSource>
+            </Button>
+        </FlexLayout>
+
+        <!--Pied de page-->
+        <Frame x:Name="Footer"
+               Grid.Row="3" 
+               Margin="0"
+               Padding="0"
+               BackgroundColor="#EEEEEE"
+               BorderColor="#EEEEEE"
+               CornerRadius="0"
+               VerticalOptions="FillAndExpand"
+               HorizontalOptions="FillAndExpand">
+            <HorizontalStackLayout
+                HorizontalOptions="CenterAndExpand" 
+                Margin="1">
+                <!--<Rectangle 
+                    BackgroundColor="#F72C82" 
+                    WidthRequest="15" 
+                    HeightRequest="2" 
+                    Margin="8 25 5 5" />-->
+                <Label Text="Développé par ..." 
+                       VerticalOptions="Center" 
+                       TextColor="#666666" 
+                       FontSize="12" />
+                <!--<Rectangle 
+                    BackgroundColor="#F72C82" 
+                    WidthRequest="15" 
+                    HeightRequest="2" 
+                    Margin="8 5 5 25" />-->
+            </HorizontalStackLayout>
+
+        </Frame>
+    </Grid>
+
+    <!--<ScrollView>
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
@@ -36,5 +261,5 @@
 
             <Label Text="TEST" />
         </VerticalStackLayout>
-    </ScrollView>
+        </ScrollView>-->
 </ContentPage>

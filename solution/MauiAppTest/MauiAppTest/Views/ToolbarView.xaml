@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helpers="clr-namespace:MauiAppTest.Helpers"
+             x:Name="this"
+             x:Class="MauiAppTest.Views.ToolbarView">
+
+        <Grid ColumnDefinitions="*" 
+              RowDefinitions="250, *, 25" 
+              ColumnSpacing="0" 
+              RowSpacing="0" 
+              Padding="0" 
+              Margin="0" 
+              VerticalOptions="FillAndExpand" 
+              HorizontalOptions="FillAndExpand">
+            
+            <Frame Grid.Row="0"
+                   CornerRadius="0"
+                   Margin="0"
+                   Padding="5"
+                   BorderColor="#3F2097">
+                <Frame.Background>
+                    <LinearGradientBrush  StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#3F2097" Offset="0"/>
+                        <GradientStop Color="#7C2370" Offset="1"/>
+                    </LinearGradientBrush>
+                </Frame.Background>
+
+                <Grid
+                ColumnDefinitions="32,32,*,32,32"
+                RowDefinitions="auto, *"
+                ColumnSpacing="0"
+                RowSpacing="0"
+                Padding="0"
+                Margin="0"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand">
+
+                    <!--Bouton de fermeture de l’application-->
+                    <Button 
+                    Grid.Column="0"
+                    Padding="0"
+                    Margin="0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    BackgroundColor="Transparent"
+                    TextColor="#FFFFFF"
+                    BorderColor="Transparent">
+                        <Button.ImageSource>
+                            <FontImageSource
+                            Glyph="{x:Static helpers:FontIcon.PowerStandby}"
+                            FontFamily="FontIcon"
+                            Size="32" />
+                        </Button.ImageSource>
+                    </Button>
+
+                    <!--Bouton de fermeture de retour-->
+                    <Button 
+                    Grid.Column="1"
+                    Padding="0"
+                    Margin="0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    BackgroundColor="Transparent"
+                    TextColor="#FFFFFF"
+                    BorderColor="Transparent">
+                        <Button.ImageSource>
+                            <FontImageSource
+                            Glyph="{x:Static helpers:FontIcon.ArrowLeft}"
+                            FontFamily="FontIcon"
+                            Size="32" />
+                        </Button.ImageSource>
+                    </Button>
+
+                    <!--Titre de la page-->
+                    <Label                    
+                    Grid.Column="2"
+                    Padding="0"
+                    Margin="0"
+                    Text="{Binding CardTitle, FallbackValue='Card Title'}"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    TextColor="#FFFFFF"
+                    FontSize="28"
+                    />
+
+                    <!--Bouton de synchronistion-->
+                    <Button 
+                    Grid.Column="3"
+                    Padding="0"
+                    Margin="0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    BackgroundColor="Transparent"
+                    TextColor="#FFFFFF"
+                    BorderColor="Transparent">
+                        <Button.ImageSource>
+                            <FontImageSource
+                            Glyph="{x:Static helpers:FontIcon.Autorenew}"
+                            FontFamily="FontIcon"
+                            Size="32" />
+                            <!--Glyph="{x:Static helpers:FontIcon.AutorenewOff}"-->
+                        </Button.ImageSource>
+                    </Button>
+
+                    <!--Logo-->
+                    <Frame
+                    Grid.Column="4"
+                    Margin="0"
+                    Padding="0"
+                    HeightRequest="32"
+                    WidthRequest="32"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    IsClippedToBounds="True"
+                    CornerRadius="16">
+                        <Image
+                        Aspect="AspectFill"
+                        HeightRequest="32"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        Source="nodata.png"
+                        WidthRequest="32" />
+                    </Frame>
+
+                    <!--Zone de text (opacité)-->
+                    <Frame 
+                    Grid.Row="1"
+                    Grid.ColumnSpan="5"           
+                    Margin="50"
+                    BorderColor="Transparent"
+                    Opacity="0.1"
+                    CornerRadius="12"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                    </Frame>
+
+                    <!--Zone de text-->
+                    <Frame 
+                    Grid.Row="1"
+                    Grid.ColumnSpan="5"           
+                    Margin="50"
+                    BorderColor="Transparent"
+                    BackgroundColor="Transparent"
+                    CornerRadius="12"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+                        <StackLayout>
+                            <Label Text="Emmanuel de MONTI"
+                               FontSize="14"
+                               FontAttributes="Bold"
+                               TextColor="#FFFFFF"/>
+                            <BoxView Color="#FFFFFF"
+                                 HeightRequest="2"
+                                 HorizontalOptions="Fill" />
+                            <Label Text="Technicien..."
+                               TextColor="#FFFFFF"/>
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+            </Frame>
+            <FlexLayout
+            Grid.Row="1"
+            AlignItems="Center"
+            Wrap="Wrap"
+            JustifyContent="SpaceEvenly">
+
+                <Button 
+                WidthRequest="100"
+                HeightRequest="100"
+                BackgroundColor="#FEFEFE"
+                Margin="10"
+                TextColor="#666666"
+                FontSize="12"
+                ContentLayout="Top"
+                Text="Adhérents">
+                    <Button.ImageSource>
+                        <FontImageSource
+                        Glyph="{x:Static helpers:FontIcon.Cat}"
+                        FontFamily="FontIcon"
+                        Size="32"
+                        Color="#7C2370"/>
+                    </Button.ImageSource>
+                    <Button.Shadow>
+                        <Shadow Brush="#EEEEEE" Offset="1,1" Opacity="0.8" />
+                    </Button.Shadow>
+                </Button>
+
+                <Button 
+                WidthRequest="100"
+                HeightRequest="100"
+                BackgroundColor="#FEFEFE"
+                Margin="10"
+                TextColor="#666666"
+                FontSize="12"
+                ContentLayout="Top"
+                Text="Adhérents">
+                    <Button.ImageSource>
+                        <FontImageSource
+                        Glyph="{x:Static helpers:FontIcon.MoonFirstQuarter}"
+                        FontFamily="FontIcon"
+                        Size="32"
+                        Color="#7C2370"/>
+                    </Button.ImageSource>
+                    <Button.Shadow>
+                        <Shadow Brush="#EEEEEE" Offset="1,1" Opacity="0.8" />
+                    </Button.Shadow>
+                </Button>
+
+                <Button 
+                WidthRequest="100"
+                HeightRequest="100"
+                BackgroundColor="#FEFEFE"
+                Margin="10"
+                TextColor="#666666"
+                ContentLayout="Top"
+                FontSize="12"
+                Text="Adhérents">
+                    <Button.ImageSource>
+                        <FontImageSource
+                        Glyph="{x:Static helpers:FontIcon.Calendar}"
+                        FontFamily="FontIcon"
+                        Size="32"
+                        Color="#7C2370"/>
+                    </Button.ImageSource>
+                    <Button.Shadow>
+                        <Shadow Brush="#EEEEEE" Offset="1,1" Opacity="0.8" />
+                    </Button.Shadow>
+                </Button>
+
+                <Button 
+                WidthRequest="100"
+                HeightRequest="100"
+                BackgroundColor="#FEFEFE"
+                TextColor="#666666"
+                Margin="10"
+                FontSize="12"
+                ContentLayout="Top"
+                Text="Adhérents">
+                    <Button.ImageSource>
+                        <FontImageSource
+                        Glyph="{x:Static helpers:FontIcon.Horse}"
+                        FontFamily="FontIcon"
+                        Size="32"
+                        Color="#7C2370"/>
+                    </Button.ImageSource>
+                    <Button.Shadow>
+                        <Shadow Brush="#EEEEEE" Offset="1,1" Opacity="0.8" />
+                    </Button.Shadow>
+                </Button>
+
+                <Button 
+                WidthRequest="100"
+                HeightRequest="100"
+                BackgroundColor="#FEFEFE"
+                TextColor="#666666"
+                ContentLayout="Top"
+                FontSize="12"
+                Margin="10"
+                Text="Adhérents">
+                    <Button.ImageSource>
+                        <FontImageSource
+                        Glyph="{x:Static helpers:FontIcon.Unicorn}"
+                        FontFamily="FontIcon"
+                        Size="32"
+                        Color="#7C2370"/>
+                    </Button.ImageSource>
+                    <Button.Shadow>
+                        <Shadow Brush="#EEEEEE" Offset="1,1" Opacity="0.8" />
+                    </Button.Shadow>
+                </Button>
+
+                <Button 
+                WidthRequest="100"
+                HeightRequest="100"
+                Margin="10"
+                BackgroundColor="#FEFEFE"
+                TextColor="#666666"
+                ContentLayout="Top"
+                FontSize="12"
+                Text="Adhérents">
+                    <Button.ImageSource>
+                        <FontImageSource
+                        Glyph="{x:Static helpers:FontIcon.TeddyBear}"
+                        FontFamily="FontIcon"
+                        Size="32"
+                        Color="#7C2370"/>
+                    </Button.ImageSource>
+                    <Button.Shadow>
+                        <Shadow Brush="#EEEEEE" Offset="1,1" Opacity="0.8" />
+                    </Button.Shadow>
+                </Button>
+
+                <Button 
+                WidthRequest="100"
+                HeightRequest="100"
+                Margin="10"
+                BackgroundColor="#FEFEFE"
+                TextColor="#666666"
+                ContentLayout="Top"
+                Text="Facturation"
+                FontSize="12">
+                    <Button.ImageSource>
+                        <FontImageSource
+                        Glyph="{x:Static helpers:FontIcon.CurrencyEur}"
+                        FontFamily="FontIcon"
+                        Size="32"
+                        Color="#7C2370"/>
+                    </Button.ImageSource>
+                    <Button.Shadow>
+                        <Shadow Brush="#EEEEEE" Offset="1,1" Opacity="0.8" />
+                    </Button.Shadow>
+                </Button>
+            </FlexLayout>
+
+            <Frame Grid.Row="2" 
+               Margin="0"
+               Padding="0"
+               BackgroundColor="#EEEEEE"
+               BorderColor="#EEEEEE"
+               CornerRadius="0"
+               VerticalOptions="FillAndExpand"
+               HorizontalOptions="FillAndExpand">
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand" Margin="1" BackgroundColor="#EEEEEE">
+                    <!--<Rectangle BackgroundColor="#7C2370" WidthRequest="15" HeightRequest="2" Margin="8 25 5 5" />-->
+                    <Label Text="by Optavis" VerticalOptions="Center" TextColor="#666666" FontSize="12" />
+                    <!--<Rectangle BackgroundColor="#7C2370" WidthRequest="15" HeightRequest="2" Margin="8 5 5 25" />-->
+                </HorizontalStackLayout>
+
+            </Frame>
+
+        </Grid>
+
+</ContentView>
