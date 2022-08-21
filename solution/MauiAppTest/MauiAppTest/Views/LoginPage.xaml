@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helpers="clr-namespace:MauiAppTest.Helpers"
+             x:Class="MauiAppTest.Views.LoginPage"
+             BackgroundColor="{StaticResource Primary}"
+             Title="LoginPage">
+
+    <Grid RowDefinitions="*,30">
+
+        <VerticalStackLayout 
+            Grid.Row="0"
+            Spacing="25"
+            Padding="30, 0"
+            VerticalOptions="Center">
+
+            <Frame
+                HeightRequest="100"
+                WidthRequest="100"
+                HorizontalOptions="Center" 
+                Margin="0,80,0,0"
+                Padding="0"
+                IsClippedToBounds="True"
+                CornerRadius="50"
+                BorderColor="{StaticResource Light100}"
+                BackgroundColor="{StaticResource Light}">
+                <Image 
+                    Aspect="AspectFill"
+                    HeightRequest="100"
+                    WidthRequest="100"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Source="nodata.png" />
+            </Frame>
+
+            <VerticalStackLayout Spacing="5">
+                <Label Text="Bienvenue" FontSize="20" TextColor="{StaticResource Light}" HorizontalOptions="Center" />
+            </VerticalStackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    HeightRequest="20"
+                    WidthRequest="20"
+                    Margin="10,0,0,0"
+                    Padding="0"
+                    FontSize="24"
+                    FontFamily="FontIcon" 
+                    TextColor="{StaticResource Light}" 
+                    Text="{x:Static helpers:FontIcon.Account}" />
+                <Entry 
+                    VerticalOptions="Center" 
+                    HorizontalOptions="FillAndExpand"
+                    Margin="20,0,0,0" 
+                    Keyboard="Email"
+                    Placeholder="Login"
+                    BackgroundColor="{StaticResource Light}" 
+                    TextColor="{StaticResource Primary}" />
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    HeightRequest="20"
+                    WidthRequest="20"
+                    Margin="10,0,0,0"
+                    Padding="0"
+                    FontSize="24"
+                    FontFamily="FontIcon" 
+                    TextColor="{StaticResource Light}" 
+                    Text="{x:Static helpers:FontIcon.Lock}" />
+                <Entry 
+                    VerticalOptions="Center" 
+                    HorizontalOptions="FillAndExpand"
+                    Margin="20,0,0,0" 
+                    Keyboard="Default"
+                    IsPassword="True"
+                    Placeholder="Mot de passe"
+                    BackgroundColor="{StaticResource Light}" 
+                    TextColor="{StaticResource Primary}" />
+                <Label
+                    ZIndex="1"
+                    HeightRequest="20"
+                    WidthRequest="30"
+                    Margin="-33,0,0,0"
+                    Padding="0"
+                    FontSize="16"
+                    FontFamily="FontIcon" 
+                    TextColor="{StaticResource Primary}"
+                    HorizontalTextAlignment="Center"
+                    BackgroundColor="{StaticResource Light}"
+                    Text="{x:Static helpers:FontIcon.Eye}" />
+            </StackLayout>
+
+            <Button
+                WidthRequest="100"
+                HeightRequest="40"
+                HorizontalOptions="Center"
+                CornerRadius="10"
+                Background="{StaticResource Light100}"
+                TextColor="{StaticResource Primary}"
+                Text="Valider" />
+
+            <StackLayout Orientation="Horizontal">
+                <CheckBox
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    Color="{StaticResource Light}"
+                    BackgroundColor="{StaticResource Primary}"
+                    Margin="10,0,0,0" />
+                <Label
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    Margin="10,0,0,0" 
+                    FontSize="14" 
+                    TextColor="{StaticResource Light}" 
+                    Text="Se souvenir de moi" />
+            </StackLayout>
+
+        </VerticalStackLayout>
+
+        <StackLayout 
+            Grid.Row="1"
+            Orientation="Horizontal"
+            HorizontalOptions="Center"
+            Padding="30, 0"
+            BackgroundColor="{StaticResource Primary}">
+
+            <Label
+                HeightRequest="22"
+                WidthRequest="22"
+                Margin="2"
+                Padding="0"
+                FontSize="18"
+                FontFamily="FontIcon" 
+                TextColor="{StaticResource Light}" 
+                Text="{x:Static helpers:FontIcon.Facebook}" />
+            <Label
+                HeightRequest="22"
+                WidthRequest="22"
+                Margin="2"
+                Padding="0"
+                FontSize="18"
+                FontFamily="FontIcon" 
+                TextColor="{StaticResource Light}" 
+                Text="{x:Static helpers:FontIcon.Instagram}" />
+            <Label
+                HeightRequest="22"
+                WidthRequest="22"
+                Margin="2"
+                Padding="0"
+                FontSize="18"
+                FontFamily="FontIcon" 
+                TextColor="{StaticResource Light}" 
+                Text="{x:Static helpers:FontIcon.Linkedin}" />
+
+        </StackLayout>
+
+    </Grid>
+
+</ContentPage>

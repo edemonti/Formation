@@ -4,15 +4,31 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiAppTest"
-    xmlns:view="clr-namespace:MauiAppTest.Views"
+    xmlns:views="clr-namespace:MauiAppTest.Views"
     Shell.FlyoutBehavior="Disabled">
-    
+
+    <!--<FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <Tab Title="Domestic">
+            <ShellContent 
+                Title="Accueil"
+                ContentTemplate="{DataTemplate views:AccueilPage}"
+                Route="AccueilPage" />
+            <ShellContent 
+                Title="Connexion"
+                ContentTemplate="{DataTemplate views:ConnexionPage}"
+                Route="ConnexionPage" />
+        </Tab>
+        <ShellContent 
+            Title="Toolbar"
+            ContentTemplate="{DataTemplate views:ToolbarView}" />
+    </FlyoutItem>-->
+
     <ShellContent
         Shell.NavBarIsVisible="False"
         Shell.NavBarHasShadow="True"
         Shell.BackgroundColor="#3F2097"
-        Title="Home"
-        ContentTemplate="{DataTemplate view:ConnexionPage}"
-        Route="ConnexionPage"></ShellContent>
+        Title="Login"
+        ContentTemplate="{DataTemplate views:LoginPage}">
+    </ShellContent>
 
 </Shell>
