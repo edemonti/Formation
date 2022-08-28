@@ -1,0 +1,119 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net6.0-windows10.0.19041.0</TargetFrameworks>
+		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net6.0-tizen</TargetFrameworks> -->
+		<OutputType>Exe</OutputType>
+		<RootNamespace>MauiDocumentation</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<!-- Display name -->
+		<ApplicationTitle>MauiDocumentation</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.mauidocumentation</ApplicationId>
+		<ApplicationIdGuid>e025ec71-3cfd-4571-96d4-01df3fcb7866</ApplicationIdGuid>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Remove="ViewModels\IntegrationPlateforme\StockageViewModel.cs" />
+	  <Compile Remove="ViewModels\InterfaceUtilisateur\DisplayPopupViewModel.cs" />
+	  <Compile Remove="Views\IntegrationPlatforme\StockagePage.xaml.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Remove="Views\IntegrationPlatforme\StockagePage.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Views\InterfaceUtilisateur\AfficherFenetreContextuellePage.xaml.cs">
+	    <DependentUpon>AfficherFenetreContextuellePage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\ResolutionProbleme\ResolutionProblemePage.xaml.cs">
+	    <DependentUpon>ResolutionProblemePage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Deploiement\DeploiementPage.xaml.cs">
+	    <DependentUpon>DeploiementPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\DonneesServicesCloud\DonneesServicesCloudPage.xaml.cs">
+	    <DependentUpon>DonneesServicesCloudPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\IntegrationPlatforme\IntegrationPlatformePage.xaml.cs">
+	    <DependentUpon>IntegrationPlatformePage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\InterfaceUtilisateur\InterfaceUtilisateurPage.xaml.cs">
+	    <DependentUpon>InterfaceUtilisateurPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Fondamentaux\FondamentauxPage.xaml.cs">
+	    <DependentUpon>FondamentauxPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Views\Xaml\XamlPage.xaml.cs">
+	    <DependentUpon>XamlPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\InterfaceUtilisateur\AfficherFenetreContextuellePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ResolutionProbleme\ResolutionProblemePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Deploiement\DeploiementPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\DonneesServicesCloud\DonneesServicesCloudPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\InterfaceUtilisateur\InterfaceUtilisateurPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\IntegrationPlatforme\IntegrationPlatformePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Fondamentaux\FondamentauxPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\Xaml\XamlPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+</Project>

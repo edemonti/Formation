@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiDocumentation.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiDocumentation"
+    xmlns:views="clr-namespace:MauiDocumentation.Views"
+    Shell.FlyoutBehavior="Locked">
+
+    <ShellContent
+        Title="XAML"
+        ContentTemplate="{DataTemplate views:XamlPage}"
+        Route="XamlPage" />
+    
+    <ShellContent
+        Title="Fondamentaux"
+        ContentTemplate="{DataTemplate views:FondamentauxPage}"
+        Route="FondamentauxPage" />
+
+    <ShellContent
+        Title="Interface utilisateur"
+        ContentTemplate="{DataTemplate views:InterfaceUtilisateurPage}"
+        Route="InterfaceUtilisateurPage" />
+
+    <ShellContent
+        Title="Intégration de la platforme"
+        ContentTemplate="{DataTemplate views:IntegrationPlatformePage}"
+        Route="IntegrationPlatformePage" />
+
+    <ShellContent
+        Title="Données et services cloud"
+        ContentTemplate="{DataTemplate views:DonneesServicesCloudPage}"
+        Route="DonneesServicesCloudPage" />
+
+    <ShellContent
+        Title="Déploiement"
+        ContentTemplate="{DataTemplate views:DeploiementPage}"
+        Route="DeploiementPage" />
+
+    <ShellContent
+        Title="Résolution des problèmes"
+        ContentTemplate="{DataTemplate views:ResolutionProblemePage}"
+        Route="ResolutionProblemePage" />
+    
+    
+    
+    <!--<ShellContent 
+        Title="Cats"
+        ContentTemplate="{DataTemplate views:StockagePage}"
+        Route="StockagePage" />
+
+
+    <ShellContent 
+        Title="Cats"
+        ContentTemplate="{DataTemplate views:StockagePage}"
+        Route="StockagePage" />
+
+    <FlyoutItem Title="FlyCats">
+        <Tab>
+            <ShellContent
+                Title="Stockage"
+                Route="StockagePage"
+                ContentTemplate="{DataTemplate views:StockagePage}" />
+        </Tab>
+        <Tab>
+            <ShellContent
+                Title="2"
+                Route="StockagePage"
+                ContentTemplate="{DataTemplate views:StockagePage}" />
+        </Tab>
+    </FlyoutItem>-->
+    <!--<FlyoutItem Title="Dogs"
+                Icon="dog.png">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate views:DogsPage}" />
+        </Tab>
+    </FlyoutItem>-->
+
+</Shell>
