@@ -1,13 +1,17 @@
-﻿using MauiAppTest.Models;
-using System.Net.Http.Json;
+﻿using System.Net.Http.Json;
+using MauiAppTest.Models;
+using MauiAppTest.Validators;
 
 namespace MauiAppTest.Services;
 
 /// <summary>
 /// Service de gestion des lots.
 /// </summary>
-public class LotService
+public class LotService : BaseService<Lot, LotValidator>
 {
+    #region Private fields
+
+    #endregion
 
     #region Properties
 
@@ -15,7 +19,7 @@ public class LotService
     /// 
     /// </summary>
     private HttpClient httpClient;
-    
+
     /// <summary>
     /// Liste des lots.
     /// </summary>
@@ -23,12 +27,18 @@ public class LotService
 
     #endregion
 
-    #region Methods
+    #region Constructors
 
-    public LotService()
+
+    public LotService(IConnectivity connectivity, LotValidator lotValidator)
+        : base(connectivity, lotValidator)
     {
         this.httpClient = new HttpClient();
     }
+
+    #endregion
+
+    #region Methods
 
     /// <summary>
     /// Récupération de la liste des lots.

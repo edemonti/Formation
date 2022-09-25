@@ -13,7 +13,6 @@ namespace MauiAppTest.ViewModels;
 /// </summary>
 public partial class LotsViewModel : BaseViewModel
 {
-
     #region Properties
 
     /// <summary>

@@ -28,7 +28,7 @@
         Shell.NavBarHasShadow="True"
         Shell.BackgroundColor="#3F2097"
         Title="Login"
-        ContentTemplate="{DataTemplate views:LoginPage}">
+        ContentTemplate="{DataTemplate views:LotsPage}">
     </ShellContent>
 
 </Shell>

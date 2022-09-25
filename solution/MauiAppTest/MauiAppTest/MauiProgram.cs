@@ -1,4 +1,5 @@
 ﻿using MauiAppTest.Services;
+using MauiAppTest.Validators;
 using MauiAppTest.ViewModels;
 using MauiAppTest.Views;
 
@@ -23,7 +24,6 @@ public static class MauiProgram
         builder.Services.AddSingleton<IGeolocation>(Geolocation.Default);
         builder.Services.AddSingleton<IMap>(Map.Default);
 
-
         // Services.
         builder.Services.AddSingleton<LotService>();
 
@@ -32,6 +32,9 @@ public static class MauiProgram
         builder.Services.AddSingleton<AccueilViewModel>();
         builder.Services.AddSingleton<LotsViewModel>();
         builder.Services.AddTransient<LotDetailViewModel>();
+
+        // Validators.
+        builder.Services.AddSingleton<LotValidator>();
 
         // Pages.
         builder.Services.AddSingleton<ConnexionPage>();

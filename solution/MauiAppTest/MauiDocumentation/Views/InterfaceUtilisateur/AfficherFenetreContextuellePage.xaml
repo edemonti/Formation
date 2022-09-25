@@ -8,10 +8,6 @@
     Title="AfficherFenetreContextuellePage">
 
     <VerticalStackLayout>
-        <Label>
-            Afficher une alerte
-            await DisplayAlert("Alert", "You have been alerted", "OK");
-        </Label>
         <Button Text="Action 1" Command="{Binding ExecuteActionCommand}" />
     </VerticalStackLayout>
 
